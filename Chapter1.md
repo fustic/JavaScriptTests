@@ -83,15 +83,18 @@
   ```
   Какие из следующих утверждений верны:
   1. Browser будет считать, что они из одного источника
-  2. Внутри функции iframeOnLoad вы сможете получить доступ к `document` на чтение 
+  2. Внутри функции iframeOnLoad вы сможете получить доступ к `document` на чтение
+   
     ```javascript
     console.log(iframe.contentWindow.document)
     ```
-  3. Внутри функции iframeOnLoad вы сможете получить доступ к `location` на чтение 
+  3. Внутри функции iframeOnLoad вы сможете получить доступ к `location` на чтение
+   
     ```javascript
     console.log(iframe.contentWindow.location.href)
     ```
-  4. Внутри функции iframeOnLoad вы сможете получить доступ к `location` на запись 
+  4. Внутри функции iframeOnLoad вы сможете получить доступ к `location` на запись
+   
     ```javascript
     iframe.contentWindow.location = 'http://auto.mail.ru';
     ```
