@@ -84,17 +84,17 @@
   Какие из следующих утверждений верны:
   1. Browser будет считать, что они из одного источника
   2. Внутри функции iframeOnLoad вы сможете получить доступ к `document` на чтение 
-    ```javascript
-    console.log(iframe.contentWindow.document)
-    ```
+  ```javascript
+  console.log(iframe.contentWindow.document)
+  ```
   3. Внутри функции iframeOnLoad вы сможете получить доступ к `location` на чтение 
    ```javascript
    console.log(iframe.contentWindow.location.href)
    ```
   4. Внутри функции iframeOnLoad вы сможете получить доступ к `location` на запись 
-    ```javascript
-    iframe.contentWindow.location = 'http://auto.mail.ru';
-    ```
+  ```javascript
+  iframe.contentWindow.location = 'http://auto.mail.ru';
+  ```
   5. "Общение" между окнами с разных источников возможно через postMessage 
   
   *Правильные ответы:* **4, 5**
@@ -110,17 +110,17 @@
   Какие из следующих утверждений верны:
   1. Browser будет считать, что они из одного источника
   2. Внутри функции iframeOnLoad вы сможете получить доступ к `document` на чтение 
-    ```javascript
-    console.log(iframe.contentWindow.document)
-    ```
+  ```javascript
+  console.log(iframe.contentWindow.document)
+  ```
   3. Внутри функции iframeOnLoad вы сможете получить доступ к `location` на чтение 
-   ```javascript
-   console.log(iframe.contentWindow.location.href)
-   ```
+  ```javascript
+  console.log(iframe.contentWindow.location.href)
+  ```
   4. Внутри функции iframeOnLoad вы сможете получить доступ к `location` на запись 
-    ```javascript
-    iframe.contentWindow.location = 'http://auto.mail.ru';
-    ```
+  ```javascript
+  iframe.contentWindow.location = 'http://auto.mail.ru';
+  ```
   5. "Общение" между окнами с разных источников не возможно через postMessage 
   
   *Правильные ответы:* **1, 2, 3, 4**
@@ -136,17 +136,17 @@
   Какие из следующих утверждений верны:
   1. Browser будет считать, что они из одного источника
   2. Внутри функции iframeOnLoad вы сможете получить доступ к `document` на чтение 
-    ```javascript
-    console.log(iframe.contentWindow.document)
-    ```
+  ```javascript
+  console.log(iframe.contentWindow.document)
+  ```
   3. Внутри функции iframeOnLoad вы сможете получить доступ к `location` на чтение 
-   ```javascript
-   console.log(iframe.contentWindow.location.href)
-   ```
+  ```javascript
+  console.log(iframe.contentWindow.location.href)
+  ```
   4. Внутри функции iframeOnLoad вы сможете получить доступ к `location` на запись 
-    ```javascript
-    iframe.contentWindow.location = 'http://auto.mail.ru';
-    ```
+  ```javascript
+  iframe.contentWindow.location = 'http://auto.mail.ru';
+  ```
   5. "Общение" между окнами с разных источников не возможно через postMessage 
   
   *Правильные ответы:* **4**
@@ -162,17 +162,17 @@
   Какие из следующих утверждений верны:
   1. Browser будет считать, что они из одного источника
   2. Внутри функции iframeOnLoad вы сможете получить доступ к `document` на чтение 
-   ```javascript
-   console.log(iframe.contentWindow.document)
-   ```
+  ```javascript
+  console.log(iframe.contentWindow.document)
+  ```
   3. Внутри функции iframeOnLoad вы сможете получить доступ к `location` на чтение 
   ```javascript
   console.log(iframe.contentWindow.location.href)
   ```
   4. Внутри функции iframeOnLoad вы сможете получить доступ к `location` на запись 
-   ```javascript
-   iframe.contentWindow.location = 'http://auto.mail.ru';
-   ```
+  ```javascript
+  iframe.contentWindow.location = 'http://auto.mail.ru';
+  ```
   5. "Общение" между окнами с разных источников не возможно через postMessage 
   
   *Правильные ответы:* **1, 2, 3, 4**
@@ -188,17 +188,17 @@
   Какие из следующих утверждений верны:
   1. Browser будет считать, что они из одного источника
   2. Внутри функции iframeOnLoad вы сможете получить доступ к `document` на чтение 
-   ```javascript
-   console.log(iframe.contentWindow.document)
-   ```
+  ```javascript
+  console.log(iframe.contentWindow.document)
+  ```
   3. Внутри функции iframeOnLoad вы сможете получить доступ к `location` на чтение 
   ```javascript
   console.log(iframe.contentWindow.location.href)
   ```
   4. Внутри функции iframeOnLoad вы сможете получить доступ к `location` на запись 
-   ```javascript
-   iframe.contentWindow.location = 'http://auto.mail.ru';
-   ```
+  ```javascript
+  iframe.contentWindow.location = 'http://auto.mail.ru';
+  ```
   5. "Общение" между окнами с разных источников возможно через postMessage 
   
   *Правильные ответы:* **4, 5**
