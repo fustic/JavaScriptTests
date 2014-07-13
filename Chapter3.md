@@ -196,4 +196,120 @@
   *Правильные ответы:* **2, 3, 4**
 
 ### Тема 3. Работа со строками
+1. Какие из нижеперечисленных выражений истинны
+  ```javascript
+  var myString = 'mail.ru';
+  ```
+
+  ```javascript
+  1. myString.charAt(0) === 'm'
+  ```
+  ```javascript
+  2. myString.substring(1, 4) === 'mail'
+  ```
+  ```javascript
+  3. myString.slice(-myString.indexOf('.')) === 'l.ru'
+  ```
+  ```javascript
+  4. myString.split('.')[0] === 'mail'
+  ```
+  ```javascript
+  5. myString.slice(1, -1) === 'ail'
+  ```
+
+  *Правильные ответы:* **1, 3, 4 **
+
+2. Какие из нижеперечисленных выражений истинны
+  ```javascript
+  var myString = 'mail.ru';
+  ```
+
+  ```javascript
+  1. myString.charAt(myString.length) === 'u'
+  ```
+  ```javascript
+  2. myString.substring(1, 4) === 'ail'
+  ```
+  ```javascript
+  3. myString.slice(-4) === 'l.ru'
+  ```
+  ```javascript
+  4. myString.split('.')[0] === 'mail.'
+  ```
+  ```javascript
+  5. myString.slice(1, -1) === 'ail.r'
+  ```
+
+  *Правильные ответы:* **2, 3, 5**
+
+3. Какие из нижеперечисленных выражений истинны
+  ```javascript
+  var myString = 'mail.ru';
+  ```
+
+  ```javascript
+  1. myString.charAt(myString.length - 1) === 'u'
+  ```
+  ```javascript
+  2. myString.substr(1, 4) === 'ail'
+  ```
+  ```javascript
+  3. myString.slice(0) === myString
+  ```
+  ```javascript
+  4. myString.split('.')[1] === 'ru'
+  ```
+  ```javascript
+  5. myString.slice(1, -3) === 'ail.r'
+  ```
+
+  *Правильные ответы:* **1, 3, 4**
+
+4. Какие из нижеперечисленных выражений истинны
+  ```javascript
+  var myString = 'mail.ru';
+  ```
+
+  ```javascript
+  1. myString.charAt(myString.indexOf('.')) === '.'
+  ```
+  ```javascript
+  2. myString.substr(1, 4) === 'ail.'
+  ```
+  ```javascript
+  3. myString.slice(-1) === 'r'
+  ```
+  ```javascript
+  4. myString.split('.')[1] === '.ru'
+  ```
+  ```javascript
+  5. myString.slice(0, 0) === ''
+  ```
+
+  *Правильные ответы:* **1, 2, 5**
+
+5. Какие из нижеперечисленных выражений истинны
+  ```javascript
+  var myString = 'mail.ru';
+  ```
+
+  ```javascript
+  1. myString.charAt(myString.lastIndexOf('.')) === '.'
+  ```
+  ```javascript
+  2. myString.substr(myString.lastIndexOf('.')) === '.ru'
+  ```
+  ```javascript
+  3. myString.slice(-1) === 'm'
+  ```
+  ```javascript
+  4. myString.split()[0] === myString
+  ```
+  ```javascript
+  5. myString.slice(0, 0) === 'm'
+  ```
+
+  *Правильные ответы:* **1, 2, 4**
+
+### Тема 4. Работа с массивами
 1. 
