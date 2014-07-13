@@ -356,10 +356,9 @@
   Как можно получить первый элемент списка?
   
   1. 
-    
-    ```javascript
-    document.querySelectorAll('li:first-child')
-    ```
+  ```javascript
+  document.querySelectorAll('li:first-child')
+  ```
   2.
     
     ```javascript
