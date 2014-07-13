@@ -413,4 +413,107 @@
   *Правильные ответы:* **1, 5**
 
 ### Тема 5. Работа с массивами
-1.
+1. Какие методы класса Array определяются стандартом ECMAScript5
+  1. `reverse()`
+  2. `unshift()`
+  3. `reduce()`
+  4. `indexOf()`
+  5. `some()`
+
+  *Правильные ответы:* **3, 4, 5**
+
+2. В результате выполнения какого кода в результате будет массив
+  ```javascript
+  var array = 'mail.ru'.split('');
+  ??
+  result = ['a', 'i', 'l', 'm', 'r'];
+  ```
+  ```javascript
+  1. result = array.sort().slice(1, -1)
+  ```
+  ```javascript
+  2. result = array.sort().pop().unshift()
+  ```
+  ```javascript
+  3. array.sort().pop();
+     array.unshift();
+     result = array;
+  ```
+  ```javascript
+  4. result = array.sort().splice(array.indexOf('.') + 1, 5);
+  ```
+  ```javascript
+  5. result = array.reverse().slice(1, -1)
+  ```
+
+  *Правильные ответы:* **1, 3, 4, **
+
+3. Чему будет равен массив после данной операции
+  ```javascript
+  var array = [1, 3, 4, 2, 7, 5, 6];
+  array.length = 3;
+  array = array.concat(array);
+  ```
+  ```javascript
+  1. [1, 3, 4, 2, 7, 5, 6, 1, 3, 4, 2, 7, 5, 6]
+  ```
+  ```javascript
+  2. [1, 3, 4]
+  ```
+  ```javascript
+  3. [1, 3, 4, 2, 7, 5, 6]
+  ```
+  ```javascript
+  4. [1, 3, 4, 1, 3, 4]
+  ```
+  ```javascript
+  5. [1, 3, 4, 2, 1, 3, 4, 2]
+  ```
+
+  *Правильные ответы:* **4**
+
+4. Какие из нижепредставленных выражений истинны
+  ```javascript
+  var array = [1, 3, 4, 2, 7, 5, 6];
+  ```
+  ```javascript
+  1. array.every(function (x) {return x < 4})
+  ```
+  ```javascript
+  2. array.some(function (x) {return x < 4})
+  ```
+  ```javascript
+  3. !array.filter(function (x) {return x === 0}).length
+  ```
+  ```javascript
+  4. array.pop() === 6
+  ```
+  ```javascript
+  5. array.shift() === 6
+  ```
+
+  *Правильные ответы:* **2, 3, 4**
+
+5. Какие из нижепредставленных выражений истинны
+  ```javascript
+  var array = 'mail.ru'.split('');
+  ```
+  ```javascript
+  1. array.splice(4, 3);
+     array.join('') === 'mail'
+  ```
+  ```javascript
+  2. array.slice(4, 3);
+     array.join('') === 'mail'
+  ```
+  ```javascript
+  3. [].concat(array.pop()) === 'u'
+  ```
+  ```javascript
+  4. array.indexOf(array.slice(0, 1).join('')) === 0
+  ```
+  ```javascript
+  5. array.concat(array).lastIndexOf('.') === 4
+  ```
+
+  *Правильные ответы:* **1, 3, 4 **
