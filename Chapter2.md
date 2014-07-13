@@ -150,3 +150,167 @@
   5. 7
   
   *Правильные ответы:* **5**
+  
+### Тема 2. Capturing и bubbling.
+1. Что будет в консоли после клика на `div`
+  
+  ```html
+  <body>
+      <div>This is my div</div>
+  
+      <script>
+          var
+            body = document.body,
+            div = document.querySelector('div');
+  
+          body.addEventListener('click', function() {
+              console.log('body')
+          }, false);
+  
+          div.addEventListener('click', function() {
+              console.log('div')
+          }, false)
+  
+      </script>
+  </body>
+  ```
+  1. div
+  2. body
+  3. div
+     body
+  4. body
+     div
+  5. пустая строка
+   
+  *Правильные ответы:* **3**
+
+2. Что будет в консоли после клика на `div`
+  
+  ```html
+  <body>
+      <div>This is my div</div>
+  
+      <script>
+          var
+            body = document.body,
+            div = document.querySelector('div');
+  
+          body.addEventListener('click', function() {
+              console.log('body')
+          }, true);
+  
+          div.addEventListener('click', function() {
+              console.log('div')
+          }, true);
+  
+      </script>
+  </body>
+  ```
+  1. div
+  2. body
+  3. div
+     body
+  4. body
+     div
+  5. пустая строка
+   
+  *Правильные ответы:* **4**
+
+3. Что будет в консоли после клика на `div`
+  
+  ```html
+  <body>
+      <div>This is my div</div>
+  
+      <script>
+          var
+            body = document.body,
+            div = document.querySelector('div');
+  
+          body.addEventListener('click', function() {
+              console.log('body')
+          }, false);
+  
+          div.addEventListener('click', function() {
+              console.log('div')
+          }, true);
+  
+      </script>
+  </body>
+  ```
+  1. div
+  2. body
+  3. div
+     body
+  4. body
+     div
+  5. пустая строка
+   
+  *Правильные ответы:* **3**
+  
+4. Что будет в консоли после клика на `div`
+  
+  ```html
+  <body>
+      <div>This is my div</div>
+  
+      <script>
+          var
+            body = document.body,
+            div = document.querySelector('div');
+  
+          body.addEventListener('click', function() {
+              console.log('body')
+          }, true);
+  
+          div.addEventListener('click', function() {
+              console.log('div')
+          }, false);
+  
+      </script>
+  </body>
+  ```
+  1. div
+  2. body
+  3. div
+     body
+  4. body
+     div
+  5. пустая строка
+   
+  *Правильные ответы:* **4**
+    
+5. Что будет в консоли после клика на `div`
+  
+  ```html
+  <body>
+      <div>This is my div</div>
+  
+      <script>
+          var
+            body = document.body,
+            div = document.querySelector('div');
+  
+            body.addEventListener('click', function(e) {
+                e.stopPropagation();
+                console.log('body')
+            }, false);
+    
+            div.addEventListener('click', function(e) {
+                e.stopPropagation();
+                console.log('div')
+            }, false);
+  
+      </script>
+  </body>
+  ```
+  1. div
+  2. body
+  3. div
+     body
+  4. body
+     div
+  5. пустая строка
+   
+  *Правильные ответы:* **1**
+            
