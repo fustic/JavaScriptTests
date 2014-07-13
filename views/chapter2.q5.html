@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html style="width: 100%; height: 100%;">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body style="width: 100%; height: 100%;">
+
+<div id="my-div" style="width: 100%; height: 100%; display: block">&nbsp;</div>
+
+<script>
+
+    var div = document.getElementById('my-div');
+    div.addEventListener('click', function (e) {
+//        e.stopPropagation();
+//        e.preventDefault();
+        console.log('click');
+    }, false);
+
+    div.addEventListener('touchstart', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('touchstart');
+    }, false);
+
+
+    div.addEventListener('touchmove', function (e) {
+//        e.stopPropagation();
+//        e.preventDefault();
+        console.log('touchmove');
+    }, false);
+
+
+    div.addEventListener('mousemove', function (e) {
+//        e.stopPropagation();
+//        e.preventDefault();
+        console.log('mousemove');
+    }, false);
+
+
+    div.addEventListener('touchend', function (e) {
+//        e.stopPropagation();
+//        e.preventDefault();
+        console.log('touchend');
+    }, false);
+</script>
+
+</body>
+</html>
