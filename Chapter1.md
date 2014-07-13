@@ -372,3 +372,103 @@
   ```
         
   *Правильные ответы:* **2, 3, 5**
+
+2. Страница содержит следующий `html` код
+  ```html
+  <label for="mail-ru-projects">Проекты mail.ru</label>
+  <ul class="main-ul" id="mail-ru-projects">
+      <li class="li">http://auto.mail.ru/</li>
+      <li class="li">http://afisha.mail.ru/</li>
+      <li class="li">https://biz.mail.ru/</li>
+      <li class="li">https://money.mail.ru/</li>
+      <li class="li">http://dobro.mail.ru/</li>
+  </ul>
+  ```
+  Как можно получить последний элемент списка?
+  
+  ```javascript
+  1. document.querySelectorAll('li:last-child')
+  ```
+  ```javascript
+  2. document.querySelector('li:last-child')
+  ```    
+  ```javascript
+  3. document.getElementsByTagName('li')[document.getElementsByTagName('li').length - 1]
+  ```    
+  ```javascript
+  4. document.getElementsByTagName('li:last-child')[0]
+  ```    
+  ```javascript
+  5. document.getElementsByClassName('li')[4]
+  ```
+        
+  *Правильные ответы:* **2, 3, 5**
+
+3. Страница содержит следующий `html` код
+  ```html
+  <label for="mail-ru-projects">Проекты mail.ru</label>
+  <ul class="main-ul" id="mail-ru-projects">
+      <li class="li">http://auto.mail.ru/</li>
+      <li class="li">http://afisha.mail.ru/</li>
+      <li class="li">https://biz.mail.ru/</li>
+      <li class="li">https://money.mail.ru/</li>
+      <li class="li">http://dobro.mail.ru/</li>
+  </ul>
+  ```
+  Что вернет следующий селектор
+  ```javascript
+  document.querySelectorAll('#mail-ru-projects li.li')
+  ```
+  1. Произойдет ошибка, потому что селектор не валидный
+  2. Массив содержащий все элементы списка
+  3. Массив содержащий только первый элемент списка
+  4. Массив содержащий только последний элемент списка
+  5. Элемент `ul`
+        
+  *Правильные ответы:* **2**
+  
+4. Страница содержит следующий `html` код
+  ```html
+  <label for="mail-ru-projects">Проекты mail.ru</label>
+  <ul class="main-ul" id="mail-ru-projects">
+      <li class="li">http://auto.mail.ru/</li>
+      <li class="li">http://afisha.mail.ru/</li>
+      <li class="li">https://biz.mail.ru/</li>
+      <li class="li">https://money.mail.ru/</li>
+      <li class="li">http://dobro.mail.ru/</li>
+  </ul>
+  ```
+  Что вернет следующий селектор
+  ```javascript
+  document.querySelector('#mail-ru-projects li.li')
+  ```
+  1. Произойдет ошибка, потому что селектор не валидный
+  2. Массив содержащий все элементы списка
+  3. Массив содержащий только один элемент списка
+  4. Один элемент списка
+  5. Элемент `ul`
+        
+  *Правильные ответы:* **4**
+
+5. Страница содержит следующий `html` код
+  ```html
+  <label for="mail-ru-projects">Проекты mail.ru</label>
+  <ul class="main-ul" id="mail-ru-projects">
+      <li class="li">http://auto.mail.ru/</li>
+      <li class="li">http://afisha.mail.ru/</li>
+      <li class="li">https://biz.mail.ru/</li>
+      <li class="li">https://money.mail.ru/</li>
+      <li class="li">http://dobro.mail.ru/</li>
+  </ul>
+  ```
+  Что вернет следующий селектор
+  ```javascript
+  document.querySelectorAll('#mail-ru-projects li.li:not(:first-child)')
+  ```
+  1. Произойдет ошибка, потому что селектор не валидный
+  2. Массив содержащий все элементы списка
+  3. Массив содержащий все элементы списка, кроме первого
+  4. Массив содержащий несколько элементов списка
+  5. Второй элемент списка
+        
+  *Правильные ответы:* **3, 4**
