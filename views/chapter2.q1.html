@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<button id="my-button">Click me</button>
+
+<script>
+    var
+            counter = 0,
+            button = document.getElementById('my-button');
+    button.onclick = function () {
+        counter++;
+    };
+    button.addEventListener('click', function () {
+        counter--;
+    }, false);
+    button.addEventListener('click', function () {
+        counter += 2;
+    }, false);
+</script>
+</body>
+</html>

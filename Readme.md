@@ -7,7 +7,6 @@
   - Выбор элементов
     - querySelector
     - getElementById
-    - ...
   - document.write()
   - ...
 2. **Обработка событий**
