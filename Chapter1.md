@@ -355,25 +355,20 @@
   ```
   Как можно получить первый элемент списка?
   
-  1. 
   ```javascript
-  document.querySelectorAll('li:first-child')
+  1. document.querySelectorAll('li:first-child')
   ```
-  2.
   ```javascript
-  document.querySelector('li:first-child')
+  2. document.querySelector('li:first-child')
   ```    
-  3.
   ```javascript
-  document.getElementsByTagName('li')[0]
+  3. document.getElementsByTagName('li')[0]
   ```    
-  4.
   ```javascript
-  document.getElementsByTagName('li:first-child')[0]
+  4. document.getElementsByTagName('li:first-child')[0]
   ```    
-  5.
   ```javascript
-  document.getElementsByClassName('li')[0]
+  5. document.getElementsByClassName('li')[0]
   ```
         
   *Правильные ответы:* **2, 3, 5**
