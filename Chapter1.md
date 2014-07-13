@@ -206,3 +206,49 @@
   
   *Правильные ответы:* **4, 5**
   
+### Тема 3. Свойства элементов дерева
+1. Какие из приведенных свойств будут присутствовать у объекта `document`
+  1. previousSibling
+  2. previousElementSibling
+  3. firstChild
+  4. lastElementChild
+  5. nextChild
+  
+  *Правильные ответы:* **1, 3, 4**
+
+2. Какие из приведенных свойств будут присутствовать у объекта `document`
+  1. nextSibling
+  2. nextElementSibling
+  3. lastChild
+  4. firstElementChild
+  5. prevChild
+  
+  *Правильные ответы:* **1, 3, 4**
+  
+3. Какие из приведенных свойств будут присутствовать у объекта `document.firstElementChild`
+  1. nextSibling
+  2. nextElementSibling
+  3. lastChild
+  4. firstElementChild
+  5. prevChild
+  
+  *Правильные ответы:* **1, 2, 3, 4**
+  
+4. Какие из приведенных свойств будут присутствовать у объекта `document.firstElementChild`
+  1. previousSibling
+  2. previousElementSibling
+  3. firstChild
+  4. lastElementChild
+  5. nextChild
+  
+  *Правильные ответы:* **1, 2, 3, 4**
+
+5. Какие из приведенных свойств будут присутствовать у объекта `document.lastElementChild`
+  1. previousSibling
+  2. previousElementSibling
+  3. nextSibling
+  4. nextElementSibling
+  5. firstSibling
+  
+  *Правильные ответы:* **1, 2, 3, 4**
+  
