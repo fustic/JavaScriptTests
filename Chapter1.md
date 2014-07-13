@@ -74,6 +74,7 @@
   
 ### Тема 2. Ограничение "Same Origin"
 1. Ваш скрипт загружен на странице с адресом http://www.mail.ru, также вы вставили `iframe` c погодой от mail.ru
+  
   ```html
   <iframe src="http://pogoda.mail.ru/" name="pogoda.mail.ru" id="pogodaMailRu"></iframe>
   ```
@@ -103,6 +104,7 @@
   *Правильные ответы:* **4, 5**
  
 2. Ваш скрипт загружен на странице с адресом http://mail.ru, также вы вставили `iframe` c погодой от mail.ru
+  
   ```html
   <iframe src="http://pogoda.mail.ru/" name="pogoda.mail.ru" id="pogodaMailRu"></iframe>
   ```
@@ -113,22 +115,26 @@
   Какие из следующих утверждений верны:
   1. Browser будет считать, что они из одного источника
   2. Внутри функции iframeOnLoad вы сможете получить доступ к `document` на чтение 
-  ```javascript
-  console.log(iframe.contentWindow.document)
-  ```
+  
+    ```javascript
+    console.log(iframe.contentWindow.document)
+    ```
   3. Внутри функции iframeOnLoad вы сможете получить доступ к `location` на чтение 
-  ```javascript
-  console.log(iframe.contentWindow.location.href)
-  ```
+  
+    ```javascript
+    console.log(iframe.contentWindow.location.href)
+    ```
   4. Внутри функции iframeOnLoad вы сможете получить доступ к `location` на запись 
-  ```javascript
-  iframe.contentWindow.location = 'http://auto.mail.ru';
-  ```
+  
+    ```javascript
+    iframe.contentWindow.location = 'http://auto.mail.ru';
+    ```
   5. "Общение" между окнами с разных источников не возможно через postMessage 
   
   *Правильные ответы:* **1, 2, 3, 4**
  
 3. Ваш скрипт загружен на странице с адресом https://mail.ru, также вы вставили `iframe` c погодой от mail.ru
+  
   ```html
   <iframe src="http://pogoda.mail.ru/" name="pogoda.mail.ru" id="pogodaMailRu"></iframe>
   ```
@@ -139,22 +145,26 @@
   Какие из следующих утверждений верны:
   1. Browser будет считать, что они из одного источника
   2. Внутри функции iframeOnLoad вы сможете получить доступ к `document` на чтение 
-  ```javascript
-  console.log(iframe.contentWindow.document)
-  ```
+    
+    ```javascript
+    console.log(iframe.contentWindow.document)
+    ```
   3. Внутри функции iframeOnLoad вы сможете получить доступ к `location` на чтение 
-  ```javascript
-  console.log(iframe.contentWindow.location.href)
-  ```
+  
+    ```javascript
+    console.log(iframe.contentWindow.location.href)
+    ```
   4. Внутри функции iframeOnLoad вы сможете получить доступ к `location` на запись 
-  ```javascript
-  iframe.contentWindow.location = 'http://auto.mail.ru';
-  ```
+  
+    ```javascript
+    iframe.contentWindow.location = 'http://auto.mail.ru';
+    ```
   5. "Общение" между окнами с разных источников не возможно через postMessage 
   
   *Правильные ответы:* **4**
  
 4. Ваш скрипт загружен на странице с адресом https://mail.ru, также вы вставили `iframe` c погодой от mail.ru
+  
   ```html
   <iframe src="https://pogoda.mail.ru/" name="pogoda.mail.ru" id="pogodaMailRu"></iframe>
   ```
@@ -165,22 +175,26 @@
   Какие из следующих утверждений верны:
   1. Browser будет считать, что они из одного источника
   2. Внутри функции iframeOnLoad вы сможете получить доступ к `document` на чтение 
-  ```javascript
-  console.log(iframe.contentWindow.document)
-  ```
+  
+    ```javascript
+    console.log(iframe.contentWindow.document)
+    ```
   3. Внутри функции iframeOnLoad вы сможете получить доступ к `location` на чтение 
-  ```javascript
-  console.log(iframe.contentWindow.location.href)
-  ```
+  
+    ```javascript
+    console.log(iframe.contentWindow.location.href)
+    ```
   4. Внутри функции iframeOnLoad вы сможете получить доступ к `location` на запись 
-  ```javascript
-  iframe.contentWindow.location = 'http://auto.mail.ru';
-  ```
+  
+    ```javascript
+    iframe.contentWindow.location = 'http://auto.mail.ru';
+    ```
   5. "Общение" между окнами с разных источников не возможно через postMessage 
   
   *Правильные ответы:* **1, 2, 3, 4**
 
 5. Ваш скрипт загружен на странице с адресом https://www.mail.ru, также вы вставили `iframe` c погодой от mail.ru
+  
   ```html
   <iframe src="http://www.pogoda.mail.ru/" name="pogoda.mail.ru" id="pogodaMailRu"></iframe>
   ```
@@ -191,17 +205,20 @@
   Какие из следующих утверждений верны:
   1. Browser будет считать, что они из одного источника
   2. Внутри функции iframeOnLoad вы сможете получить доступ к `document` на чтение 
-  ```javascript
-  console.log(iframe.contentWindow.document)
-  ```
+  
+    ```javascript
+    console.log(iframe.contentWindow.document)
+    ```
   3. Внутри функции iframeOnLoad вы сможете получить доступ к `location` на чтение 
-  ```javascript
-  console.log(iframe.contentWindow.location.href)
-  ```
+  
+    ```javascript
+    console.log(iframe.contentWindow.location.href)
+    ```
   4. Внутри функции iframeOnLoad вы сможете получить доступ к `location` на запись 
-  ```javascript
-  iframe.contentWindow.location = 'http://auto.mail.ru';
-  ```
+  
+    ```javascript
+    iframe.contentWindow.location = 'http://auto.mail.ru';
+    ```
   5. "Общение" между окнами с разных источников возможно через postMessage 
   
   *Правильные ответы:* **4, 5**
