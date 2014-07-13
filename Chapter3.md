@@ -311,5 +311,106 @@
 
   *Правильные ответы:* **1, 2, 4**
 
-### Тема 4. Работа с массивами
-1. 
+### Тема 4. Создание массива
+1. Какой код создаст массив с длинной 10
+
+  ```javascript
+  1. var array = new Array(10)
+  ```
+  ```javascript
+  2. var array = new Array('10')
+  ```
+  ```javascript
+  3. var array = [10]
+  ```
+  ```javascript
+  4. var array = [Math.pow(10, 9)].join().split('')
+  ```
+  ```javascript
+  5. var array = 10 * [10]
+  ```
+
+  *Правильные ответы:* **1, 4**
+
+2. Какой код создаст массив с длинной 100
+
+  ```javascript
+  1. var array = new Array(100)
+  ```
+  ```javascript
+  2. var array = new Array('100')
+  ```
+  ```javascript
+  3. var array = [100]
+  ```
+  ```javascript
+  4. var array = [Math.pow(100, 10)].join().split('')
+  ```
+  ```javascript
+  5. var array = 10 * [100]
+  ```
+
+  *Правильные ответы:* **1, **
+
+3. Какой код создаст массив с длинной 1
+
+  ```javascript
+  1. var array = new Array(1)
+  ```
+  ```javascript
+  2. var array = new Array('1')
+  ```
+  ```javascript
+  3. var array = [1]
+  ```
+  ```javascript
+  4. var array = [,]
+  ```
+  ```javascript
+  5. var array = 1 * [1]
+  ```
+
+  *Правильные ответы:* **1, 2, 3, 4 **
+
+4. Какой код создаст массив с длинной 5
+
+  ```javascript
+  1. var array = new Array(5)
+  ```
+  ```javascript
+  2. var array = new Array('5')
+  ```
+  ```javascript
+  3. var array = [5]
+  ```
+  ```javascript
+  4. var array = [,1,,,5]
+  ```
+  ```javascript
+  5. var array = 5 * [5]
+  ```
+
+  *Правильные ответы:* **1, 4**
+
+5. Какой код создаст массив с длинной 0
+
+  ```javascript
+  1. var array = new Array(0)
+  ```
+  ```javascript
+  2. var array = new Array('0')
+  ```
+  ```javascript
+  3. var array = [0]
+  ```
+  ```javascript
+  4. var array = [,]
+  ```
+  ```javascript
+  5. var array = []
+  ```
+
+  *Правильные ответы:* **1, 5**
+
+### Тема 5. Работа с массивами
+1.
