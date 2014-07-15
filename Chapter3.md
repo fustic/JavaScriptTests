@@ -517,3 +517,64 @@
   ```
 
   *Правильные ответы:* **1, 3, 4 **
+
+### Тема 6. typeof
+1. Что вернет
+  ```javascript
+  typeof null
+  ```
+  1. "object"
+  2. "number"
+  3. "function"
+  4. "undefined"
+  5. "string"
+
+  *Правильные ответы:* **1**
+
+2. Что вернет
+  ```javascript
+  typeof {}
+  ```
+  1. "object"
+  2. "number"
+  3. "function"
+  4. "undefined"
+  5. "string"
+
+  *Правильные ответы:* **1**
+
+3. Что вернет
+  ```javascript
+  typeof function(){}
+  ```
+  1. "object"
+  2. "number"
+  3. "function"
+  4. "undefined"
+  5. "string"
+
+  *Правильные ответы:* **3**
+
+4. Что вернет
+  ```javascript
+  typeof (function(){})()
+  ```
+  1. "object"
+  2. "number"
+  3. "function"
+  4. "undefined"
+  5. "string"
+
+  *Правильные ответы:* **4**
+
+5. Что вернет
+  ```javascript
+  typeof typeof (function(){})()
+  ```
+  1. "object"
+  2. "number"
+  3. "function"
+  4. "undefined"
+  5. "string"
+
+  *Правильные ответы:* **5**
