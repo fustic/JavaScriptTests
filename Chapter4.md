@@ -213,4 +213,503 @@
   *Правильные ответы:* **4**
 
 ### Тема 3. Область видимости переменных
-1.
+1. Что будет в консоли browser?
+  ```javascript
+  var foo = 5;
+  function bar() {
+    var a = f = 5;
+  }
+  bar();
+  console.log(foo + a);
+  ```
+  1. 10
+  2. ReferenceError
+  3. NaN
+  4. undefined
+  5. 5
+  
+  *Правильные ответы:* **2**
+    
+2. Что будет в консоли browser?
+  ```javascript
+  var foo = 5;
+  function bar() {
+    var a = f = 5;
+  }
+  bar();
+  console.log(foo + f);
+  ```
+  1. 10
+  2. ReferenceError
+  3. NaN
+  4. undefined
+  5. 5
+  
+  *Правильные ответы:* **1**
+  
+3. Что будет в консоли browser?
+  ```javascript
+  var foo = 5;
+  function bar() {
+    var a = f = 5;
+  }
+  console.log(foo + f);
+  ```
+  1. 10
+  2. ReferenceError
+  3. NaN
+  4. undefined
+  5. 5
+  
+  *Правильные ответы:* **2**
+
+4. Что будет в консоли browser?
+  ```javascript
+  var foo = 5;
+  function bar() {
+    var a = f = 5;
+  }
+  console.log(foo + bar());
+  ```
+  1. 10
+  2. ReferenceError
+  3. NaN
+  4. undefined
+  5. 5
+  
+  *Правильные ответы:* **3**
+
+5. Что будет в консоли browser?
+  ```javascript
+  var foo = 5;
+  function bar() {
+    var a = f = 5;
+    return f = 10;
+  }
+  console.log(foo + bar());
+  ```
+  1. 15
+  2. ReferenceError
+  3. NaN
+  4. undefined
+  5. 5
+  
+  *Правильные ответы:* **1**
+  
+### Тема 4. Область видимости, статические переменные.
+1. Результатом выполнения следующего кода будет
+  ```javascript
+  var mailFunction = (function () {
+    var mailUsers = 0;
+    return function () {
+      return ++mailUsers;
+    };
+  }());
+  console.log(mailFunction());
+  console.log(mailFunction());
+  ```
+  1. 0
+     0
+  2. 0
+     1
+  3. 1
+     2
+  4. undefined is not a function
+  5. 1
+     1
+  
+  *Правильные ответы:* **3**
+
+2. Результатом выполнения следующего кода будет
+  ```javascript
+  var mailFunction = (function () {
+    var mailUsers = 0;
+    return function () {
+      return ++mailUsers;
+    };
+  }());
+  console.log(mailFunction());
+  mailFunction.mailUsers = 5;
+  console.log(mailFunction());
+  ```
+  1. 1
+     6
+  2. 0
+     1
+  3. 1
+     2
+  4. undefined is not a function
+  5. ReferenceError
+  
+  *Правильные ответы:* **3**
+
+3. Результатом выполнения следующего кода будет
+  ```javascript
+  var
+    mailFunction = (function () {
+     var mailUsers = 0;
+     return function () {
+       return ++mailUsers;
+     };
+    }()),
+    mainAnotherFunction = mailFunction;
+  console.log(mailFunction());
+  console.log(mainAnotherFunction());
+  ```
+  1. 1
+     1
+  2. 0
+     0
+  3. 1
+     2
+  4. undefined is not a function
+  5. ReferenceError
+  
+  *Правильные ответы:* **3**
+
+4. Результатом выполнения следующего кода будет
+  ```javascript
+  var
+    mailFunction = (function () {
+     var mailUsers = 0;
+     return function () {
+       return ++mailUsers;
+     };
+    }()),
+    mainAnotherFunction = mailFunction;
+  console.log(mailFunction());
+  mailFunction.mailUsers = 4;
+  console.log(mainAnotherFunction());
+  ```
+  1. 1
+     1
+  2. 1
+     5
+  3. 1
+     2
+  4. undefined is not a function
+  5. ReferenceError
+  
+  *Правильные ответы:* **3**
+
+5. Результатом выполнения следующего кода будет
+  ```javascript
+  var
+    mailFunction = (function () {
+     var mailUsers = 0;
+     return function () {
+       return ++mailUsers;
+     };
+    }()),
+    mainAnotherFunction = mailFunction;
+  console.log(mailFunction());
+  mailFunction.mailUsers = 4;
+  console.log(+mainAnotherFunction());
+  ```
+  1. 1
+     1
+  2. 1
+     5
+  3. 1
+     2
+  4. undefined is not a function
+  5. ReferenceError
+  
+  *Правильные ответы:* **3**
+
+### Тема 5. Замыкания
+1. Какой из приведенных кусков кода выведет в консоль поочередно 0 и 1 через 1 сек. ?
+  1. ```javascript
+     for (var i = 0; i < 2; i++) {
+       setTimeout(function() { alert(i); }, 1000);
+     }
+     ```
+  2. ```javascript
+     for (var i = 0; i < 2; i++) {
+       setTimeout((function(e) { alert(e); })(i), 1000);
+     }
+     ```
+  3. ```javascript
+     for (var i = 0; i < 2; i++) {
+       (function(e) {
+         setTimeout(function() {
+           alert(e)
+         }, 1000);
+       })(i);
+     }
+     ```
+  4. ```javascript
+     for (var i = 0; i < 2; i++) {
+       setTimeout(function(k) {
+         alert(k)
+       }.bind(this, i), 1000);
+     }
+     ```
+  5. ```javascript
+     for (var i = 0; i < 2; i++) {
+       (function(e) {
+         setTimeout(function(k) {
+            alert(k);
+         }.bind(this, e), 1000);
+       }(i));
+     }
+     ```
+  *Правильные ответы:* **3, 4, 5**
+  
+2. Какой из приведенных кусков кода выведет в консоль поочередно 0 и 1 сразу после окончания выполнения цикла?
+  1. ```javascript
+     for (var i = 0; i < 2; i++) {
+       setTimeout(function() { alert(i); }, 1000);
+     }
+     ```
+  2. ```javascript
+     for (var i = 0; i < 2; i++) {
+       setTimeout((function(e) { alert(e); })(i), 1000);
+     }
+     ```
+  3. ```javascript
+     for (var i = 0; i < 2; i++) {
+       (function(e) {
+         setTimeout(+function() {
+           alert(e)
+         }(), 1000);
+       })(i);
+     }
+     ```
+  4. ```javascript
+     for (var i = 0; i < 2; i++) {
+       setTimeout(function(k) {
+         alert(k)
+       }.bind(this, i), 1000);
+     }
+     ```
+  5. ```javascript
+     for (var i = 0; i < 2; i++) {
+       (function(e) {
+         setTimeout(function(k) {
+            alert(k);
+         }.bind(this, e), 1000);
+       }(i));
+     }
+     ```
+  *Правильные ответы:* **2, 3**
+  
+3. Какой из приведенных кусков кода выведет в консоль поочередно 1, 2 и 3 через 1 сек. ?
+  1. ```javascript
+     for (var i = 1; i <= 3; i++) {
+       setTimeout(function() { alert(i); }, 1000);
+     }
+     ```
+  2. ```javascript
+     for (var i = 1; i <= 3; i++) {
+       setTimeout(function(k) {
+         alert(k)
+       }.bind(this, i), 1000);
+     }
+     ```
+  3. ```javascript
+     for (var i = 1; i <= 3; i++) {
+       setTimeout((function(e) { alert(e); })(i), 1000);
+     }
+     ```
+  4. ```javascript
+     for (var i = 1; i <= 3; i++) {
+       (function(e) {
+         setTimeout(function() {
+           alert(e)
+         }, 1000);
+       })(i);
+     }
+     ```
+  5. ```javascript
+     for (var i = 1; i <= 3; i++) {
+       (function(e) {
+         setTimeout(function(k) {
+            alert(k);
+         }.bind(this, e), 1000);
+       }(i));
+     }
+     ```
+  *Правильные ответы:* **2, 4, 5**
+  
+4. Какой из приведенных кусков кода выведет в консоль поочередно 1, 2, 3 сразу после окончания выполнения цикла?
+  1. ```javascript
+     for (var i = 1; i <= 3; i++) {
+       setTimeout(function() { alert(i); }, 1000);
+     }
+     ```
+  2. ```javascript
+     for (var i = 1; i <= 3; i++) {
+       setTimeout((function(e) { alert(e); })(i), 1000);
+     }
+     ```
+  3. ```javascript
+     for (var i = 1; i <= 3; i++) {
+       (function(e) {
+         setTimeout(+function() {
+           alert(e)
+         }(), 1000);
+       })(i);
+     }
+     ```
+  4. ```javascript
+     for (var i = 1; i <= 3; i++) {
+       setTimeout(function(k) {
+         alert(k)
+       }.bind(this, i), 1000);
+     }
+     ```
+  5. ```javascript
+     for (var i = 1; i <= 3; i++) {
+       (function(e) {
+         setTimeout(function(k) {
+            alert(k);
+         }.bind(this, e), 1000);
+       }(i));
+     }
+     ```
+  *Правильные ответы:* **2, 3**
+
+5. Какой из приведенных кусков кода выведет в консоль поочередно 1, 2 и 3 через 1 сек. ?
+  1. ```javascript
+     for (var i = 1; i <= 3; i++) {
+       setTimeout(function() { alert(i); }, 1000);
+     }
+     ```
+  2. ```javascript
+     for (var i = 1; i <= 3; i++) {
+       setTimeout(function(k) {
+         alert(k)
+       }.bind(this, i), 1000);
+     }
+     ```
+  3. ```javascript
+     for (var i = 1; i <= 3; i++) {
+       setTimeout((function(e) { alert(e); })(i), 1000);
+     }
+     ```
+  4. ```javascript
+     for (var i = 1; i <= 3; i++) {
+       (function(e) {
+         setTimeout(function() {
+           alert(e)
+         }, 1000);
+       })(i);
+     }
+     ```
+  5. ```javascript
+     for (var i = 1; i <= 3; i++) {
+       (function(e) {
+         setTimeout(function(k) {
+            alert(k);
+         }.call(this, e), 1000);
+       }(i));
+     }
+     ```
+  *Правильные ответы:* **2, 4**
+  
+### Тема 6. Контекст
+1. Что будет в консоли browser после выполнения кода
+  ```javascript
+  var
+    mail = {
+      name: 'mailRu',
+      tostr: function(title){
+        console.log(this.name + ' ' + title);
+      }
+    },
+    f = mail.tostr.bind(mail, 'group');
+  f();
+  ```
+  1. undefined group
+  2. mailRu group
+  3. group undefined
+  4. TypeError: undefined is not a function
+  5. mailRu group
+     TypeError: undefined is not a function
+  
+  *Правильные ответы:* **2**
+
+2. Что будет в консоли browser после выполнения кода
+  ```javascript
+  var
+    mail = {
+      name: 'mailRu',
+      tostr: function(title){
+        console.log(this.name + ' ' + title);
+      }
+    },
+    f = mail.tostr.bind(this, 'group');
+  f();
+  ```
+  1. undefined group
+  2. mailRu group
+  3. group undefined
+  4.  group
+  5. mailRu group
+     TypeError: undefined is not a function
+  
+  *Правильные ответы:* **4**
+  
+3. Что будет в консоли browser после выполнения кода
+  ```javascript
+  var
+    mail = {
+      name: 'mailRu',
+      tostr: function(title){
+        console.log(this.name + ' ' + title);
+      }
+    },
+    f = mail.tostr.call(this, 'group');
+  f();
+  ```
+  1. undefined group
+  2. mailRu group
+  3. group undefined
+  4.  group
+  5.  group
+     TypeError: undefined is not a function
+  
+  *Правильные ответы:* **5**  
+
+4. Что будет в консоли browser после выполнения кода
+  ```javascript
+  var
+    mail = {
+      name: 'mailRu',
+      tostr: function(title){
+        console.log(this.name + ' ' + title);
+      }
+    },
+    f = mail.tostr.call(mail, 'group');
+  f();
+  ```
+  1. undefined group
+  2. mailRu group
+  3. group undefined
+  4.  group
+  5. mailRu group
+     TypeError: undefined is not a function
+  
+  *Правильные ответы:* **5**
+    
+5. Что будет в консоли browser после выполнения кода
+  ```javascript
+  var
+    mail = {
+      name: 'mailRu',
+      tostr: function(title){
+        console.log(this.name + ' ' + title);
+      }
+    },
+    f = mail.tostr.bind(mail, 'group');
+  f.apply(this);
+  ```
+  1. undefined group
+  2. mailRu group
+  3. group undefined
+  4.  group
+  5. mailRu group
+     TypeError: undefined is not a function
+  
+  *Правильные ответы:* **2**  
