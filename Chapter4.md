@@ -419,193 +419,218 @@
 
 ### Тема 5. Замыкания
 1. Какой из приведенных кусков кода выведет в консоль поочередно 0 и 1 через 1 сек. ?
-  1. ```javascript
-     for (var i = 0; i < 2; i++) {
-       setTimeout(function() { alert(i); }, 1000);
-     }
-     ```
-  2. ```javascript
-     for (var i = 0; i < 2; i++) {
-       setTimeout((function(e) { alert(e); })(i), 1000);
-     }
-     ```
-  3. ```javascript
-     for (var i = 0; i < 2; i++) {
-       (function(e) {
-         setTimeout(function() {
-           alert(e)
-         }, 1000);
-       })(i);
-     }
-     ```
-  4. ```javascript
-     for (var i = 0; i < 2; i++) {
+  1.
+  ```javascript
+   for (var i = 0; i < 2; i++) {
+     setTimeout(function() { alert(i); }, 1000);
+   }
+   ```
+  2.
+  ```javascript
+   for (var i = 0; i < 2; i++) {
+     setTimeout((function(e) { alert(e); })(i), 1000);
+   }
+   ```
+  3.
+  ```javascript
+   for (var i = 0; i < 2; i++) {
+     (function(e) {
+       setTimeout(function() {
+         alert(e)
+       }, 1000);
+     })(i);
+   }
+   ```
+  4.
+  ```javascript
+   for (var i = 0; i < 2; i++) {
+     setTimeout(function(k) {
+       alert(k)
+     }.bind(this, i), 1000);
+   }
+   ```
+  5.
+  ```javascript
+   for (var i = 0; i < 2; i++) {
+     (function(e) {
        setTimeout(function(k) {
-         alert(k)
-       }.bind(this, i), 1000);
-     }
-     ```
-  5. ```javascript
-     for (var i = 0; i < 2; i++) {
-       (function(e) {
-         setTimeout(function(k) {
-            alert(k);
-         }.bind(this, e), 1000);
-       }(i));
-     }
-     ```
+          alert(k);
+       }.bind(this, e), 1000);
+     }(i));
+   }
+   ```
   *Правильные ответы:* **3, 4, 5**
   
 2. Какой из приведенных кусков кода выведет в консоль поочередно 0 и 1 сразу после окончания выполнения цикла?
-  1. ```javascript
-     for (var i = 0; i < 2; i++) {
-       setTimeout(function() { alert(i); }, 1000);
-     }
-     ```
-  2. ```javascript
-     for (var i = 0; i < 2; i++) {
-       setTimeout((function(e) { alert(e); })(i), 1000);
-     }
-     ```
-  3. ```javascript
-     for (var i = 0; i < 2; i++) {
-       (function(e) {
-         setTimeout(+function() {
-           alert(e)
-         }(), 1000);
-       })(i);
-     }
-     ```
-  4. ```javascript
-     for (var i = 0; i < 2; i++) {
+  1.
+  ```javascript
+   for (var i = 0; i < 2; i++) {
+     setTimeout(function() { alert(i); }, 1000);
+   }
+   ```
+  2.
+  ```javascript
+   for (var i = 0; i < 2; i++) {
+     setTimeout((function(e) { alert(e); })(i), 1000);
+   }
+   ```
+  3.
+  ```javascript
+   for (var i = 0; i < 2; i++) {
+     (function(e) {
+       setTimeout(+function() {
+         alert(e)
+       }(), 1000);
+     })(i);
+   }
+   ```
+  4.
+  ```javascript
+   for (var i = 0; i < 2; i++) {
+     setTimeout(function(k) {
+       alert(k)
+     }.bind(this, i), 1000);
+   }
+   ```
+  5.
+  ```javascript
+   for (var i = 0; i < 2; i++) {
+     (function(e) {
        setTimeout(function(k) {
-         alert(k)
-       }.bind(this, i), 1000);
-     }
-     ```
-  5. ```javascript
-     for (var i = 0; i < 2; i++) {
-       (function(e) {
-         setTimeout(function(k) {
-            alert(k);
-         }.bind(this, e), 1000);
-       }(i));
-     }
-     ```
+          alert(k);
+       }.bind(this, e), 1000);
+     }(i));
+   }
+   ```
   *Правильные ответы:* **2, 3**
   
 3. Какой из приведенных кусков кода выведет в консоль поочередно 1, 2 и 3 через 1 сек. ?
-  1. ```javascript
-     for (var i = 1; i <= 3; i++) {
-       setTimeout(function() { alert(i); }, 1000);
-     }
-     ```
-  2. ```javascript
-     for (var i = 1; i <= 3; i++) {
+  1.
+  ```javascript
+   for (var i = 1; i <= 3; i++) {
+     setTimeout(function() { alert(i); }, 1000);
+   }
+   ```
+  2.
+  ```javascript
+   for (var i = 1; i <= 3; i++) {
+     setTimeout(function(k) {
+       alert(k)
+     }.bind(this, i), 1000);
+   }
+   ```
+  3.
+  ```javascript
+   for (var i = 1; i <= 3; i++) {
+     setTimeout((function(e) { alert(e); })(i), 1000);
+   }
+   ```
+  4.
+  ```javascript
+   for (var i = 1; i <= 3; i++) {
+     (function(e) {
+       setTimeout(function() {
+         alert(e)
+       }, 1000);
+     })(i);
+   }
+   ```
+  5.
+  ```javascript
+   for (var i = 1; i <= 3; i++) {
+     (function(e) {
        setTimeout(function(k) {
-         alert(k)
-       }.bind(this, i), 1000);
-     }
-     ```
-  3. ```javascript
-     for (var i = 1; i <= 3; i++) {
-       setTimeout((function(e) { alert(e); })(i), 1000);
-     }
-     ```
-  4. ```javascript
-     for (var i = 1; i <= 3; i++) {
-       (function(e) {
-         setTimeout(function() {
-           alert(e)
-         }, 1000);
-       })(i);
-     }
-     ```
-  5. ```javascript
-     for (var i = 1; i <= 3; i++) {
-       (function(e) {
-         setTimeout(function(k) {
-            alert(k);
-         }.bind(this, e), 1000);
-       }(i));
-     }
-     ```
+          alert(k);
+       }.bind(this, e), 1000);
+     }(i));
+   }
+   ```
   *Правильные ответы:* **2, 4, 5**
   
 4. Какой из приведенных кусков кода выведет в консоль поочередно 1, 2, 3 сразу после окончания выполнения цикла?
-  1. ```javascript
-     for (var i = 1; i <= 3; i++) {
-       setTimeout(function() { alert(i); }, 1000);
-     }
-     ```
-  2. ```javascript
-     for (var i = 1; i <= 3; i++) {
-       setTimeout((function(e) { alert(e); })(i), 1000);
-     }
-     ```
-  3. ```javascript
-     for (var i = 1; i <= 3; i++) {
-       (function(e) {
-         setTimeout(+function() {
-           alert(e)
-         }(), 1000);
-       })(i);
-     }
-     ```
-  4. ```javascript
-     for (var i = 1; i <= 3; i++) {
+  1.
+  ```javascript
+   for (var i = 1; i <= 3; i++) {
+     setTimeout(function() { alert(i); }, 1000);
+   }
+   ```
+  2.
+  ```javascript
+   for (var i = 1; i <= 3; i++) {
+     setTimeout((function(e) { alert(e); })(i), 1000);
+   }
+   ```
+  3.
+  ```javascript
+   for (var i = 1; i <= 3; i++) {
+     (function(e) {
+       setTimeout(+function() {
+         alert(e)
+       }(), 1000);
+     })(i);
+   }
+   ```
+  4.
+  ```javascript
+   for (var i = 1; i <= 3; i++) {
+     setTimeout(function(k) {
+       alert(k)
+     }.bind(this, i), 1000);
+   }
+   ```
+  5.
+  ```javascript
+   for (var i = 1; i <= 3; i++) {
+     (function(e) {
        setTimeout(function(k) {
-         alert(k)
-       }.bind(this, i), 1000);
-     }
-     ```
-  5. ```javascript
-     for (var i = 1; i <= 3; i++) {
-       (function(e) {
-         setTimeout(function(k) {
-            alert(k);
-         }.bind(this, e), 1000);
-       }(i));
-     }
-     ```
+          alert(k);
+       }.bind(this, e), 1000);
+     }(i));
+   }
+   ```
   *Правильные ответы:* **2, 3**
 
 5. Какой из приведенных кусков кода выведет в консоль поочередно 1, 2 и 3 через 1 сек. ?
-  1. ```javascript
-     for (var i = 1; i <= 3; i++) {
-       setTimeout(function() { alert(i); }, 1000);
-     }
-     ```
-  2. ```javascript
-     for (var i = 1; i <= 3; i++) {
+  1.
+  ```javascript
+   for (var i = 1; i <= 3; i++) {
+     setTimeout(function() { alert(i); }, 1000);
+   }
+   ```
+  2.
+  ```javascript
+   for (var i = 1; i <= 3; i++) {
+     setTimeout(function(k) {
+       alert(k)
+     }.bind(this, i), 1000);
+   }
+   ```
+  3.
+  ```javascript
+   for (var i = 1; i <= 3; i++) {
+     setTimeout((function(e) { alert(e); })(i), 1000);
+   }
+   ```
+  4.
+  ```javascript
+   for (var i = 1; i <= 3; i++) {
+     (function(e) {
+       setTimeout(function() {
+         alert(e)
+       }, 1000);
+     })(i);
+   }
+   ```
+  5.
+  ```javascript
+   for (var i = 1; i <= 3; i++) {
+     (function(e) {
        setTimeout(function(k) {
-         alert(k)
-       }.bind(this, i), 1000);
-     }
-     ```
-  3. ```javascript
-     for (var i = 1; i <= 3; i++) {
-       setTimeout((function(e) { alert(e); })(i), 1000);
-     }
-     ```
-  4. ```javascript
-     for (var i = 1; i <= 3; i++) {
-       (function(e) {
-         setTimeout(function() {
-           alert(e)
-         }, 1000);
-       })(i);
-     }
-     ```
-  5. ```javascript
-     for (var i = 1; i <= 3; i++) {
-       (function(e) {
-         setTimeout(function(k) {
-            alert(k);
-         }.call(this, e), 1000);
-       }(i));
-     }
-     ```
+          alert(k);
+       }.call(this, e), 1000);
+     }(i));
+   }
+   ```
   *Правильные ответы:* **2, 4**
   
 ### Тема 6. Контекст
