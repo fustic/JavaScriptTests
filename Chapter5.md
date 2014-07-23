@@ -359,3 +359,219 @@
 
   *Правильные ответы:* **4**
 
+### Тема 3. Конструктор и приватные переменные.
+1. Какие из ниже перечисленных выражений истинны.
+  ```javascript
+  function MailRu() {
+      var data = {
+        name: 'MailRu',
+        headOffice: 'Moscow'
+      };
+      this.getData = function () {
+        return data;
+      };
+      return this;
+    }
+    MailRu.prototype.setName = function (name) {
+      this.data = this.data || {};
+      this.data.name = name;
+    };
+    var mailRu = new MailRu();
+  ```
+  ```javascript
+  1. mailRu.getData().name === 'MailRu'
+  ```
+  ```javascript
+  2. mailRu.getData().name === mailRu.data.name
+  ```
+  ```javascript
+  3. mailRu.setName('MailRuGroup');
+     mailRu.getData().name === 'MailRuGroup'
+  ```
+  ```javascript
+  4. mailRu.data === undefined
+  ```
+  ```javascript
+  5. mailRu.getData().name = 'MailRuGroup'
+     mailRu.getData().name === 'MailRuGroup'
+  ```   
+
+  *Правильные ответы:* **1, 4, 5**
+
+2. Какие из ниже перечисленных выражений истинны.
+  ```javascript
+    function MailRu() {
+      var data = {
+        name: 'MailRu',
+        headOffice: 'Moscow'
+      };
+      this.getData = function () {
+        return data;
+      };
+      this.getName = function () {
+        return data.name;
+      }
+      return this;
+    }
+    MailRu.prototype.setName = function (name) {
+      this.data = this.data || {};
+      this.data.name = name;
+    };
+    var mailRu = new MailRu();
+  ```
+  ```javascript
+  1. mailRu.getData().name === mailRu.getName()
+  ```
+  ```javascript
+  2. mailRu.getName() === mailRu.data.name
+  ```
+  ```javascript
+  3. mailRu.setName('MailRuGroup');
+     mailRu.getName() === 'MailRuGroup'
+  ```
+  ```javascript
+  4. mailRu.data === undefined
+  ```
+  ```javascript
+  5. mailRu.getData().name = 'MailRuGroup'
+     mailRu.getName() === 'MailRuGroup'
+  ```   
+
+  *Правильные ответы:* **1, 4, 5**
+
+3. Какие из ниже перечисленных выражений истинны.
+  ```javascript
+    function MailRu() {
+      var data = {
+        name: 'MailRu',
+        headOffice: 'Moscow'
+      };
+      this.getData = function () {
+        return {
+          name: data.name,
+          headOffice: data.headOffice
+        };
+      };
+      this.getName = function () {
+        return data.name;
+      }
+      return this;
+    }
+    MailRu.prototype.setName = function (name) {
+      this.data = this.data || {};
+      this.data.name = name;
+    };
+    var mailRu = new MailRu();
+  ```
+  ```javascript
+  1. mailRu.getData().name === mailRu.getName()
+  ```
+  ```javascript
+  2. mailRu.getName() === mailRu.data.name
+  ```
+  ```javascript
+  3. mailRu.setName('MailRuGroup');
+     mailRu.getName() === 'MailRuGroup'
+  ```
+  ```javascript
+  4. mailRu.data === undefined
+  ```
+  ```javascript
+  5. mailRu.getData().name = 'MailRuGroup'
+     mailRu.getName() === 'MailRuGroup'
+  ```   
+
+  *Правильные ответы:* **1, 4**
+
+4. Какие из ниже перечисленных выражений истинны.
+  ```javascript
+    function MailRu() {
+      var data = {
+        name: 'MailRu',
+        headOffice: 'Moscow'
+      };
+      this.getData = function () {
+        return {
+          name: data.name,
+          headOffice: data.headOffice
+        };
+      };
+      this.getName = function () {
+        return data.name;
+      }
+      return this;
+    }
+    MailRu.prototype.setName = function (name) {
+      this.data = this.data || {};
+      this.data.name = name;
+    };
+    var
+      mailRu = new MailRu(),
+      _mailRu = MailRu();
+  ```
+  ```javascript
+  1. mailRu.getData().name === _mailRu.getName()
+  ```
+  ```javascript
+  2. mailRu.getData() === _mailRu.getData()
+  ```
+  ```javascript
+  3. mailRu.setName(_mailRu.getName());
+     mailRu.data.name === _mailRu.getName()
+  ```
+  ```javascript
+  4. mailRu.getName() === _mailRu.getName()
+  ```
+  ```javascript
+  5. mailRu.getData().name = 'MailRuGroup'
+     mailRu.getName() === 'MailRuGroup'
+  ```   
+
+  *Правильные ответы:* **1, 3, 4**
+
+5. Какие из ниже перечисленных выражений истинны.
+  ```javascript
+    function MailRu() {
+      var data = {
+        name: 'MailRu',
+        headOffice: 'Moscow'
+      };
+      this.getData = function () {
+        return {
+          name: data.name,
+          headOffice: data.headOffice
+        };
+      };
+      this.getName = function () {
+        return data.name;
+      }
+      return this;
+    }
+    MailRu.prototype.setName = function (name) {
+      this.data = this.data || {};
+      this.data.name = name;
+    };
+    var
+      mailRu = new MailRu(),
+      _mailRu = MailRu.call(mailRu);
+  ```
+  ```javascript
+  1. mailRu.getData().name === _mailRu.getName()
+  ```
+  ```javascript
+  2. mailRu.getData() === _mailRu.getData()
+  ```
+  ```javascript
+  3. mailRu.setName(_mailRu.getName());
+     mailRu.data.name === _mailRu.getName()
+  ```
+  ```javascript
+  4. mailRu === _mailRu
+  ```
+  ```javascript
+  5. mailRu.setName('MailRuGroup');
+     _mailRu.data.name === 'MailRuGroup';
+  ```   
+
+  *Правильные ответы:* **1, 3, 4, 5**
+                    

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<script>
+  function MailRu() {
+    var data = {
+      name: 'MailRu',
+      headOffice: 'Moscow'
+    };
+    this.getData = function () {
+      return data;
+    };
+    return this;
+  }
+  MailRu.prototype.setName = function (name) {
+    this.data = this.data || {};
+    this.data.name = name;
+  };
+  var mailRu = new MailRu();
+  var mailRu1 = MailRu.call(mailRu);
+
+  console.log(mailRu, mailRu1);
+</script>
+</body>
+</html>
