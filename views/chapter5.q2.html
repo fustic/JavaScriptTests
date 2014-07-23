@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<script>
+  var
+    MailRuGroup = function () {
+      this.name = 'MailRuGroup';
+      this.country = 'Russia';
+    },
+    MailRu = function () {
+      this.name = 'MailRu';
+      MailRuGroup.call(this);
+      this.getTitle = function () {
+        return this.name + ' in ' + this.country;
+      };
+    };
+  MailRuGroup.prototype.numberOfUsers = 100;
+  MailRuGroup.prototype.getTitle = function () {
+    return this.name + ' in ' + this.country;
+  };
+  function F() {};
+  F.prototype = MailRuGroup.prototype;
+  MailRu.prototype = new F;
+  MailRuGroup.prototype.getTitle = function () {
+    return this.name;
+  };
+  var mailRu = new MailRu();
+  delete mailRu.getTitle;
+  console.log(mailRu.getTitle());
+</script>
+</body>
+</html>

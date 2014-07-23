@@ -193,4 +193,169 @@
   
   *Правильные ответы:* **1, 3**
   
-### Тема 2. 
+### Тема 2. prototype
+1. Что будет в результате выполнения функции?
+  ```javascript
+  var
+    MailRuGroup = function () {
+      this.name = 'MailRuGroup';
+      this.country = 'Russia';
+    },
+    MailRu = function () {
+      MailRuGroup.call(this);
+      this.name = 'MailRu';
+    };
+  MailRuGroup.prototype.getTitle = function () {
+    return this.name + ' in ' + this.country;
+  };
+  function F() {};
+  F.prototype = MailRuGroup.prototype;
+  MailRu.prototype = new F;
+  MailRuGroup.prototype.getTitle = function () {
+    return this.name;
+  };
+  var mailRu = new MailRu();
+  console.log(mailRu.getTitle());
+  ```
+  1. MailRu in Russia
+  2. MailRuGroup in Russia
+  3. MailRu
+  4. MailRuGroup
+  5. undefined
+
+  *Правильные ответы:* **3**
+  
+2. Что будет в результате выполнения функции?
+  ```javascript
+  var
+    MailRuGroup = function () {
+      this.name = 'MailRuGroup';
+      this.country = 'Russia';
+    },
+    MailRu = function () {
+      this.name = 'MailRu';
+      MailRuGroup.call(this);
+    };
+  MailRuGroup.prototype.getTitle = function () {
+    return this.name + ' in ' + this.country;
+  };
+  function F() {};
+  F.prototype = MailRuGroup.prototype;
+  MailRu.prototype = new F;
+  MailRuGroup.prototype.getTitle = function () {
+    return this.name;
+  };
+  var mailRu = new MailRu();
+  console.log(mailRu.getTitle());
+  ```
+  1. MailRu in Russia
+  2. MailRuGroup in Russia
+  3. MailRu
+  4. MailRuGroup
+  5. undefined
+
+  *Правильные ответы:* **4**
+  
+3. Что будет в результате выполнения функции?
+  ```javascript
+  var
+    MailRuGroup = function () {
+      this.name = 'MailRuGroup';
+      this.country = 'Russia';
+    },
+    MailRu = function () {
+      MailRuGroup.call(this);
+      this.name = 'MailRu';
+      this.getTitle = function () {
+        return this.name + ' in ' + this.country;
+      };
+    };
+  MailRuGroup.prototype.getTitle = function () {
+    return this.name + ' in ' + this.country;
+  };
+  function F() {};
+  F.prototype = MailRuGroup.prototype;
+  MailRu.prototype = new F;
+  MailRuGroup.prototype.getTitle = function () {
+    return this.name;
+  };
+  var mailRu = new MailRu();
+  console.log(mailRu.getTitle());
+  ```
+  1. MailRu in Russia
+  2. MailRuGroup in Russia
+  3. MailRu
+  4. MailRuGroup
+  5. undefined
+
+  *Правильные ответы:* **1**
+
+4. Что будет в результате выполнения функции?
+  ```javascript
+  var
+    MailRuGroup = function () {
+      this.name = 'MailRuGroup';
+      this.country = 'Russia';
+    },
+    MailRu = function () {
+      this.name = 'MailRu';
+      MailRuGroup.call(this);
+      this.getTitle = function () {
+        return this.name + ' in ' + this.country;
+      };
+    };
+  MailRuGroup.prototype.getTitle = function () {
+    return this.name + ' in ' + this.country;
+  };
+  function F() {};
+  F.prototype = MailRuGroup.prototype;
+  MailRu.prototype = new F;
+  MailRuGroup.prototype.getTitle = function () {
+    return this.name;
+  };
+  var mailRu = new MailRu();
+  console.log(mailRu.getTitle());
+  ```
+  1. MailRu in Russia
+  2. MailRuGroup in Russia
+  3. MailRu
+  4. MailRuGroup
+  5. undefined
+
+  *Правильные ответы:* **2**
+
+5. Что будет в результате выполнения функции?
+  ```javascript
+  var
+    MailRuGroup = function () {
+      this.name = 'MailRuGroup';
+      this.country = 'Russia';
+    },
+    MailRu = function () {
+      this.name = 'MailRu';
+      MailRuGroup.call(this);
+      this.getTitle = function () {
+        return this.name + ' in ' + this.country;
+      };
+    };
+  MailRuGroup.prototype.getTitle = function () {
+    return this.name + ' in ' + this.country;
+  };
+  function F() {};
+  F.prototype = MailRuGroup.prototype;
+  MailRu.prototype = new F;
+  MailRuGroup.prototype.getTitle = function () {
+    return this.name;
+  };
+  var mailRu = new MailRu();
+  delete mailRu.getTitle;
+  console.log(mailRu.getTitle());
+  ```
+  1. MailRu in Russia
+  2. MailRuGroup in Russia
+  3. MailRu
+  4. MailRuGroup
+  5. undefined
+
+  *Правильные ответы:* **4**
+
