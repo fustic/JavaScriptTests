@@ -503,7 +503,7 @@
      array.join('') === 'mail'
   ```
   ```javascript
-  2. array.slice(4, 3);
+  2. array.slice(4, 4);
      array.join('') === 'mail'
   ```
   ```javascript
@@ -516,7 +516,7 @@
   5. array.concat(array).lastIndexOf('.') === 4
   ```
 
-  *Правильные ответы:* **1, 3, 4**
+  *Правильные ответы:* **1, 4**
 
 ### Тема 6. typeof
 1. Что вернет
