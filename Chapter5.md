@@ -215,7 +215,7 @@
     return this.name;
   };
   var mailRu = new MailRu();
-  console.log(mailRu.getTitle());
+  alert(mailRu.getTitle());
   ```
   1. MailRu in Russia
   2. MailRuGroup in Russia
@@ -246,7 +246,7 @@
     return this.name;
   };
   var mailRu = new MailRu();
-  console.log(mailRu.getTitle());
+  alert(mailRu.getTitle());
   ```
   1. MailRu in Russia
   2. MailRuGroup in Russia
@@ -280,7 +280,7 @@
     return this.name;
   };
   var mailRu = new MailRu();
-  console.log(mailRu.getTitle());
+  alert(mailRu.getTitle());
   ```
   1. MailRu in Russia
   2. MailRuGroup in Russia
@@ -314,7 +314,7 @@
     return this.name;
   };
   var mailRu = new MailRu();
-  console.log(mailRu.getTitle());
+  alert(mailRu.getTitle());
   ```
   1. MailRu in Russia
   2. MailRuGroup in Russia
@@ -349,7 +349,7 @@
   };
   var mailRu = new MailRu();
   delete mailRu.getTitle;
-  console.log(mailRu.getTitle());
+  alert(mailRu.getTitle());
   ```
   1. MailRu in Russia
   2. MailRuGroup in Russia
@@ -574,4 +574,459 @@
   ```   
 
   *Правильные ответы:* **1, 3, 4, 5**
-                    
+  
+### Тема 4. Object to string
+1. Что выведет на экран пользователя следующий фрагмент кода
+  ```javascript
+    var
+      util = {
+        year: 2014,
+        title: 'MailRuGroup',
+        getTitle: function() {
+          return this.title + util.year
+        }
+      },
+      MailRu = function () {
+        this.title = 'MailRu';
+        this.getTitle = util.getTitle.bind(this);
+        this.toString = function () {
+          return this.getTitle();
+        };
+      },
+      mailRu = new MailRu();
+  
+    MailRu.prototype.toString = function () {
+      return this.getTitle() + ' in Russia';
+    };
+  
+    alert(mailRu);
+    delete mailRu.toString;
+    alert(mailRu);
+    delete mailRu.toString;
+    alert(mailRu);
+  ```
+  1. [object Object]
+     [object Object]
+     [object Object]
+  2. [object Function]
+     [object Function]
+     [object Function]
+  3. MailRu2014
+     MailRu2014 in Russia
+     MailRu2014 in Russia
+  4. MailRu2014
+     MailRu2014 in Russia
+     undefined is not a function
+  5. MailRu2014
+     MailRu2014 in Russia
+     [object Object]           
+
+  *Правильные ответы:* **3**
+  
+2. Что выведет на экран пользователя следующий фрагмент кода                
+  ```javascript
+   var
+     util = {
+       year: new function () {
+         this.toString = function () {
+           return 2014;
+         };
+       },
+       title: 'MailRuGroup',
+       getTitle: function() {
+         return this.title + util.year
+       }
+     },
+     MailRu = function () {
+       this.title = 'MailRu';
+       this.getTitle = util.getTitle.bind(this);
+       this.toString = function () {
+         return this.getTitle();
+       };
+     },
+     mailRu = new MailRu();
+  
+   MailRu.prototype.toString = function () {
+     return this.getTitle() + ' in Russia';
+   };
+  
+   alert(mailRu);
+   delete mailRu.toString;
+   alert(mailRu);
+   delete mailRu.toString;
+   alert(mailRu);                     
+  ```                 
+     
+  1. [object Object]
+     [object Object]
+     [object Object]
+  2. [object Function]
+     [object Function]
+     [object Function]
+  3. MailRu2014
+     MailRu2014 in Russia
+     MailRu2014 in Russia
+  4. MailRu2014
+     MailRu2014 in Russia
+     undefined is not a function
+  5. MailRu2014
+     MailRu2014 in Russia
+     [object Object]
+  
+  *Правильные ответы:* **3**          
+
+3. Что выведет на экран пользователя следующий фрагмент кода                
+  ```javascript
+   var
+     util = {
+       year: +function () {return 2014;}(),
+       title: 'MailRuGroup',
+       getTitle: function() {
+         return this.title + util.year
+       }
+     },
+     MailRu = function () {
+       this.title = 'MailRu';
+       this.getTitle = util.getTitle.bind(this);
+       this.toString = function () {
+         return this.getTitle();
+       };
+     },
+     mailRu = new MailRu();
+  
+   MailRu.prototype.toString = function () {
+     return this.getTitle() + ' in Russia';
+   };
+  
+   alert(mailRu);
+   delete mailRu.toString;
+   alert(mailRu);
+   delete mailRu.toString;
+   alert(mailRu);                     
+  ```                 
+     
+  1. [object Object]
+     [object Object]
+     [object Object]
+  2. [object Function]
+     [object Function]
+     [object Function]
+  3. MailRu2014
+     MailRu2014 in Russia
+     MailRu2014 in Russia
+  4. MailRu2014
+     MailRu2014 in Russia
+     undefined is not a function
+  5. MailRu2014
+     MailRu2014 in Russia
+     [object Object]
+  
+  *Правильные ответы:* **3**          
+
+4. Что выведет на экран пользователя следующий фрагмент кода                
+  ```javascript
+   var
+     util = {
+       year: +function () {return 2014;}(),
+       title: 'MailRuGroup',
+       getTitle: function() {
+         return this.title + util.year
+       }
+     },
+     MailRu = function () {
+       this.title = 'MailRu';
+       this.getTitle = util.getTitle.bind(this);
+       this.toString = function () {
+         return this.getTitle();
+       };
+     },
+     mailRu = new MailRu();
+  
+   MailRu.prototype.toString = function () {
+     return this.getTitle() + ' in Russia';
+   };
+  
+   alert(mailRu);
+   delete mailRu.toString;
+   alert(mailRu);
+   delete mailRu.toString;
+   alert(mailRu);                     
+  ```                 
+     
+  1. [object Object]
+     [object Object]
+     [object Object]
+  2. MailRuGroup
+     MailRuGroup2014 in Russia
+     MailRuGroup2014 in Russia
+  3. MailRu2014
+     MailRu2014 in Russia
+     MailRu2014 in Russia
+  4. MailRu2014
+     MailRu2014 in Russia
+     undefined is not a function
+  5. MailRu2014
+     MailRu2014 in Russia
+     [object Object]
+  
+  *Правильные ответы:* **3**          
+
+5. Что выведет на экран пользователя следующий фрагмент кода                
+  ```javascript
+   var
+     util = {
+       year: new function () {
+         this.toString = function () {
+           return 2014;
+         };
+       },
+       title: 'MailRuGroup',
+       getTitle: function() {
+         return this.title + util.year
+       }
+     },
+     MailRu = function () {
+       this.title = 'MailRu';
+       this.getTitle = util.getTitle.bind(this);
+       this.toString = function () {
+         return this.getTitle();
+       };
+     },
+     mailRu = new MailRu();
+  
+   MailRu.prototype.toString = function () {
+     return this.getTitle() + ' in Russia';
+   };
+  
+   alert(mailRu);
+   delete mailRu.toString;
+   alert(mailRu);
+   delete mailRu.toString;
+   alert(mailRu);                     
+  ```                 
+     
+  1. [object Object]
+     [object Object]
+     [object Object]
+  3. MailRuGroup
+     MailRuGroup2014 in Russia
+     MailRuGroup2014 in Russia
+  3. MailRu2014
+     MailRu2014 in Russia
+     MailRu2014 in Russia
+  4. MailRu2014
+     MailRu2014 in Russia
+     undefined is not a function
+  5. MailRu2014
+     MailRu2014 in Russia
+     MailRuGroup2014 in Russia
+  
+  *Правильные ответы:* **3**          
+
+### Тема 5. Заимствование методов
+1. Какие из нижеперечисленных выражений истинны? 
+  ```javascript
+    var
+      mailRuGroup = function () {
+        this.title = 'MailRuGroup';
+        this.numberOfEmployee = 5000;
+        this.getNumberOfEmployee = function () {
+          return this.numberOfEmployee;
+        };
+        this.getTitle = function () {
+          return this.title;
+        };
+        return this;
+      },
+      MailRu = function () {
+        this.title = 'MailRu';
+        this.numberOfEmployee = 1000;
+        mailRuGroup.call(MailRu.prototype);
+      },
+      mailRu = new MailRu();
+          
+  ```           
+  ```javascript
+  1. mailRu.getTitle() === 'MailRu'
+  ```
+  ```javascript
+  2. mailRu.getTitle() === 'MailRuGroup'
+  ```
+  ```javascript
+  3. mailRu.getNumberOfEmployee === undefined
+  ```
+  ```javascript
+  4. mailRu.getNumberOfEmployee() === 5000
+  ```
+  ```javascript
+  5. mailRu.getNumberOfEmployee() === 1000
+  ```    
+  *Правильные ответы:* **1, 5**       
+
+2. Какие из нижеперечисленных выражений истинны? 
+  ```javascript
+    var
+      mailRuGroup = function () {
+        this.title = 'MailRuGroup';
+        this.numberOfEmployee = 5000;
+        this.year = 2014;
+        this.getNumberOfEmployee = function () {
+          return this.numberOfEmployee;
+        };
+        this.getTitle = function () {
+          return this.title;
+        };
+        return this;
+      },
+      MailRu = function () {
+        this.title = 'MailRu';
+        this.numberOfEmployee = 1000;
+        this.year = 2014;
+        mailRuGroup.call(MailRu.prototype);
+      },
+      mailRu = new MailRu();
+      
+    MailRu.prototype.getTitle = function () {
+      return this.title + this.year;
+    };   
+  ```           
+  ```javascript
+  1. mailRu.getTitle() === 'MailRu'
+  ```
+  ```javascript
+  2. mailRu.getTitle() === 'MailRuGroup'
+  ```
+  ```javascript
+  3. mailRu.getTitle() === 'MailRu2014'
+  ```
+  ```javascript
+  4. mailRu.getNumberOfEmployee() === 5000
+  ```
+  ```javascript
+  5. mailRu.getNumberOfEmployee() === 1000
+  ```    
+  *Правильные ответы:* **3, 5**       
+ 
+3. Какие из нижеперечисленных выражений истинны? 
+  ```javascript
+    var
+      mailRuGroup = function () {
+        this.title = 'MailRuGroup';
+        this.numberOfEmployee = 5000;
+        this.year = 2014;
+        this.getNumberOfEmployee = function () {
+          return this.numberOfEmployee;
+        };
+        this.getTitle = function () {
+          return this.title;
+        };
+        return this;
+      },
+      MailRu = function () {
+        this.title = 'MailRu';
+        this.numberOfEmployee = 1000;
+        this.year = 2014;
+        mailRuGroup.call(MailRu);
+      },
+      mailRu = new MailRu();
+      
+    MailRu.prototype.getTitle = function () {
+      return this.title + this.year;
+    };   
+  ```           
+  ```javascript
+  1. mailRu.getTitle() === 'MailRu'
+  ```
+  ```javascript
+  2. mailRu.getNumberOfEmployee === undefined
+  ```
+  ```javascript
+  3. mailRu.getTitle() === 'MailRu2014'
+  ```
+  ```javascript
+  4. mailRu.getNumberOfEmployee() === 5000
+  ```
+  ```javascript
+  5. mailRu.getNumberOfEmployee() === 1000
+  ```    
+  *Правильные ответы:* **2, 3**       
+
+4. Какие из нижеперечисленных выражений истинны? 
+  ```javascript
+    var
+      mailRuGroup = function () {
+        this.title = 'MailRuGroup';
+        this.numberOfEmployee = 5000;
+        this.getNumberOfEmployee = function () {
+          return this.numberOfEmployee;
+        };
+        this.getTitle = function () {
+          return this.title;
+        };
+        return this;
+      },
+      MailRu = function () {
+        this.title = 'MailRu';
+        this.numberOfEmployee = 1000;
+        mailRuGroup.call(MailRu);
+      },
+      mailRu = new MailRu();
+          
+  ```           
+  ```javascript
+  1. mailRu.getTitle() === 'MailRu'
+  ```
+  ```javascript
+  2. mailRu.getTitle() === 'MailRuGroup'
+  ```
+  ```javascript
+  3. mailRu.getNumberOfEmployee === undefined
+  ```
+  ```javascript
+  4. mailRu.getTitle === undefined
+  ```
+  ```javascript
+  5. mailRu.getNumberOfEmployee() === 1000
+  ```    
+  *Правильные ответы:* **3, 4**       
+
+5. Какие из нижеперечисленных выражений истинны? 
+  ```javascript
+    var
+      mailRuGroup = function () {
+        this.title = 'MailRuGroup';
+        this.numberOfEmployee = 5000;
+        this.getNumberOfEmployee = function () {
+          return this.numberOfEmployee;
+        };
+        this.getTitle = function () {
+          return this.title;
+        };
+        return this;
+      },
+      MailRu = function () {
+        this.title = 'MailRu';
+        this.numberOfEmployee = 1000;
+      },
+      mailRu = new MailRu();
+    mailRuGroup.call(mailRu);
+    MailRu.prototype.getTitle = function () {
+      return this.title + this.year;
+    };  
+  ```           
+  ```javascript
+  1. mailRu.getTitle() === 'MailRu'
+  ```
+  ```javascript
+  2. mailRu.getTitle() === 'MailRuGroup'
+  ```
+  ```javascript
+  3. mailRu.getNumberOfEmployee === undefined
+  ```
+  ```javascript
+  4. mailRu.getNumberOfEmployee() === 5000
+  ```
+  ```javascript
+  5. mailRu.getNumberOfEmployee() === 1000
+  ```    
+  *Правильные ответы:* **2, 4**       

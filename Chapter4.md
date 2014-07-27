@@ -130,7 +130,7 @@
   if (false) {
      var c = a - b;
   }
-  console.log(c);  
+  alert(c);  
   ```
   1. 1
   2. 0 
@@ -148,7 +148,7 @@
   if (false) {
      var c = a - b;
   }
-  console.log(c);  
+  alert(c);  
   ```
   1. 1
   2. 0 
@@ -166,7 +166,7 @@
   if (false) {
      var c = a * b;
   }
-  console.log(c);  
+  alert(c);  
   ```
   1. 12
   2. 0 
@@ -184,7 +184,7 @@
   if (false) {
      var c = a / b;
   }
-  console.log(c);  
+  alert(c);  
   ```
   1. 4/5
   2. 0 
@@ -202,7 +202,7 @@
   if (false) {
      var c = b / a;
   }
-  console.log(c);  
+  alert(c);  
   ```
   1. Infinity
   2. 0
@@ -213,14 +213,14 @@
   *Правильные ответы:* **4**
 
 ### Тема 3. Область видимости переменных
-1. Что будет в консоли browser?
+1. Результатом выполнения следующего кода будет
   ```javascript
   var foo = 5;
   function bar() {
     var a = f = 5;
   }
   bar();
-  console.log(foo + a);
+  alert(foo + a);
   ```
   1. 10
   2. ReferenceError
@@ -230,14 +230,14 @@
   
   *Правильные ответы:* **2**
     
-2. Что будет в консоли browser?
+2. Результатом выполнения следующего кода будет
   ```javascript
   var foo = 5;
   function bar() {
     var a = f = 5;
   }
   bar();
-  console.log(foo + f);
+  alert(foo + f);
   ```
   1. 10
   2. ReferenceError
@@ -247,13 +247,13 @@
   
   *Правильные ответы:* **1**
   
-3. Что будет в консоли browser?
+3. Результатом выполнения следующего кода будет
   ```javascript
   var foo = 5;
   function bar() {
     var a = f = 5;
   }
-  console.log(foo + f);
+  alert(foo + f);
   ```
   1. 10
   2. ReferenceError
@@ -263,13 +263,13 @@
   
   *Правильные ответы:* **2**
 
-4. Что будет в консоли browser?
+4. Результатом выполнения следующего кода будет
   ```javascript
   var foo = 5;
   function bar() {
     var a = f = 5;
   }
-  console.log(foo + bar());
+  alert(foo + bar());
   ```
   1. 10
   2. ReferenceError
@@ -279,14 +279,14 @@
   
   *Правильные ответы:* **3**
 
-5. Что будет в консоли browser?
+5. Результатом выполнения следующего кода будет
   ```javascript
   var foo = 5;
   function bar() {
     var a = f = 5;
     return f = 10;
   }
-  console.log(foo + bar());
+  alert(foo + bar());
   ```
   1. 15
   2. ReferenceError
@@ -305,8 +305,8 @@
       return ++mailUsers;
     };
   }());
-  console.log(mailFunction());
-  console.log(mailFunction());
+  alert(mailFunction());
+  alert(mailFunction());
   ```
   1. 0
      0
@@ -328,9 +328,9 @@
       return ++mailUsers;
     };
   }());
-  console.log(mailFunction());
+  alert(mailFunction());
   mailFunction.mailUsers = 5;
-  console.log(mailFunction());
+  alert(mailFunction());
   ```
   1. 1
      6
@@ -353,8 +353,8 @@
      };
     }()),
     mainAnotherFunction = mailFunction;
-  console.log(mailFunction());
-  console.log(mainAnotherFunction());
+  alert(mailFunction());
+  alert(mainAnotherFunction());
   ```
   1. 1
      1
@@ -377,9 +377,9 @@
      };
     }()),
     mainAnotherFunction = mailFunction;
-  console.log(mailFunction());
+  alert(mailFunction());
   mailFunction.mailUsers = 4;
-  console.log(mainAnotherFunction());
+  alert(mainAnotherFunction());
   ```
   1. 1
      1
@@ -402,9 +402,9 @@
      };
     }()),
     mainAnotherFunction = mailFunction;
-  console.log(mailFunction());
+  alert(mailFunction());
   mailFunction.mailUsers = 4;
-  console.log(+mainAnotherFunction());
+  alert(+mainAnotherFunction());
   ```
   1. 1
      1
@@ -634,13 +634,13 @@
   *Правильные ответы:* **2, 4**
   
 ### Тема 6. Контекст
-1. Что будет в консоли browser после выполнения кода
+1. Что будет результатом выполнения кода
   ```javascript
   var
     mail = {
-      name: 'mailRu',
+      title: 'mailRu',
       tostr: function(title){
-        console.log(this.name + ' ' + title);
+        alert(this.title + ' ' + title);
       }
     },
     f = mail.tostr.bind(mail, 'group');
@@ -655,13 +655,13 @@
   
   *Правильные ответы:* **2**
 
-2. Что будет в консоли browser после выполнения кода
+2. Что будет результатом выполнения кода
   ```javascript
   var
     mail = {
-      name: 'mailRu',
+      title: 'mailRu',
       tostr: function(title){
-        console.log(this.name + ' ' + title);
+        alert(this.title + ' ' + title);
       }
     },
     f = mail.tostr.bind(this, 'group');
@@ -674,15 +674,15 @@
   5. mailRu group
      TypeError: undefined is not a function
   
-  *Правильные ответы:* **4**
+  *Правильные ответы:* **1**
   
-3. Что будет в консоли browser после выполнения кода
+3. Что будет результатом выполнения кода
   ```javascript
   var
     mail = {
-      name: 'mailRu',
+      title: 'mailRu',
       tostr: function(title){
-        console.log(this.name + ' ' + title);
+        alert(this.title + ' ' + title);
       }
     },
     f = mail.tostr.call(this, 'group');
@@ -691,19 +691,19 @@
   1. undefined group
   2. mailRu group
   3. group undefined
-  4.  group
-  5.  group
+  4. group
+  5. group
      TypeError: undefined is not a function
   
-  *Правильные ответы:* **5**  
+  *Правильные ответы:* **1**  
 
-4. Что будет в консоли browser после выполнения кода
+4. Что будет результатом выполнения кода
   ```javascript
   var
     mail = {
-      name: 'mailRu',
+      title: 'mailRu',
       tostr: function(title){
-        console.log(this.name + ' ' + title);
+        alert(this.title + ' ' + title);
       }
     },
     f = mail.tostr.call(mail, 'group');
@@ -716,15 +716,15 @@
   5. mailRu group
      TypeError: undefined is not a function
   
-  *Правильные ответы:* **5**
+  *Правильные ответы:* **2**
     
-5. Что будет в консоли browser после выполнения кода
+5. Что будет результатом выполнения кода
   ```javascript
   var
     mail = {
-      name: 'mailRu',
+      title: 'mailRu',
       tostr: function(title){
-        console.log(this.name + ' ' + title);
+        alert(this.title + ' ' + title);
       }
     },
     f = mail.tostr.bind(mail, 'group');

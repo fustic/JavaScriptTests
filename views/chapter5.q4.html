@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<script>
+  var
+    util = {
+      year: new function () {
+        this.toString = function () {
+          return 2014;
+        };
+      },
+      title: 'MailRuGroup',
+      getTitle: function() {
+        return this.title + util.year
+      }
+    },
+    MailRu = function () {
+      this.title = 'MailRu';
+      this.getTitle = util.getTitle.bind(this);
+      this.toString = function () {
+        return this.getTitle();
+      };
+    },
+    mailRu = new MailRu();
+
+  MailRu.prototype.toString = function () {
+    return this.getTitle() + ' in Russia';
+  };
+
+  alert(mailRu);
+  delete mailRu.toString;
+  alert(mailRu);
+  delete mailRu.toString;
+  alert(mailRu);
+</script>
+</body>
+</html>
