@@ -105,3 +105,82 @@
   5. Одновременно возможен только 1 `JSONP` запрос на определенный домен
   
   *Правильные ответы:* **2, 3, 4**
+
+### Тема 3. WebSockets
+1. Какие из утверждений верны
+  ```javascript
+  var socket = new WebSocket("ws://mail.ru/ws");
+  ```
+  1. Протокол WebSocket работает над HTTP
+  2. Соединение WebSocket можно открыть по протоколу WS
+  3. Методом `socket.send()` можно отправлять только строки
+  4. Через параметр конструктора можно выставить заголовок `Sec-WebSocket-Extensions: deflate-frame`
+  5. Коды закрытия event.code идентичны HTTP-кодам
+    ```javascript
+    socket.onclose = function (event) {
+      alert(event.code);
+    }
+    ```
+  *Правильные ответы:* **1, 2, 4**
+
+2. Какие из утверждений верны
+  ```javascript
+  var socket = new WebSocket("ws://mail.ru/ws");
+  ```
+  1. Протокол WebSocket работает только над HTTP
+  2. Соединение WebSocket можно открыть по протоколу WSS
+  3. Методом `socket.send()` можно отправлять только бинарные данные
+  4. Через параметр конструктора можно выставить заголовок `Sec-WebSocket-Protocol: wamp`
+  5. Коды закрытия event.code, в отличии от HTTP-кодов состоят из 4-х цифр
+  ```javascript
+  socket.onclose = function (event) {
+    alert(event.code);
+  }
+  ```
+  
+  *Правильные ответы:* **2, 4, 5**
+
+3. Какие из утверждений верны
+  ```javascript
+  var socket = new WebSocket("wss://mail.ru/ws");
+  ```
+  1. Протокол WebSocket работает только над HTTPS
+  2. Соединение WebSocket можно открыть как по WS, так и по WSS протоколу
+  3. Методом `socket.send()` можно отправлять любые данные
+  4. WebSocket, в отличии от HTTP не имеет ограничение на время жизни в неактивном состоянии
+  5. WebSocket поддерживается в Internet Explorer 9+
+  *Правильные ответы:* **2, 3, 4**
+
+4. Какие из утверждений верны
+  ```javascript
+  var socket = new WebSocket("wss://mail.ru/ws");
+  ```
+  1. Протокол WebSocket работает как над HTTP, так и над HTTPS
+  2. Методом `socket.send(form.elements[0].file)` можно отправлять файлы
+  3. Через параметр конструктора можно выставить заголовок `Sec-WebSocket-Extensions: deflate-frame`
+  4. WebSocket соединение может закрыть только сервер
+  5. Коды закрытия event.code идентичны HTTP-кодам
+    ```javascript
+    socket.onclose = function (event) {
+      alert(event.code);
+    }
+    ```
+  *Правильные ответы:* **1, 2, 3**
+
+5. Какие из утверждений верны
+  ```javascript
+  var socket = new WebSocket("wss://mail.ru/ws");
+  ```
+  1. Методом `socket.send('Mail.ru')` можно отправлять строки
+  2. Через параметр конструктора можно выставить заголовок `Sec-WebSocket-Protocol: soap`
+  3. Сообщения от сервера будут вызывать событие onmessage
+    ```javascript
+    socket.onmessage = function(event) {
+      alert(event.data);
+    };
+    ```
+  4. WebSocket как и HTTP имеет ограничение на время жизни в неактивном состоянии
+  5. WebSocket соединение можно закрыть методом `socket.close()`
+  *Правильные ответы:* **1, 2, 3, 5**
+
+    
