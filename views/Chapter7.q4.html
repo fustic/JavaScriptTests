@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+  var
+    db,
+    dbRequest = indexedDB.open('mail.ru10', 2),
+    person1 = {
+        name: 'user one',
+        email: 'user1@email.com',
+        age: 17,
+        created: new Date()
+    },
+    person2 = {
+        name: 'user two',
+        email: 'user2@email.com',
+        age: 35,
+        created: new Date()
+    },
+    person3 = {
+        name: 'user three',
+        email: 'user3@email.com',
+        age: 42,
+        created: new Date()
+    },
+      person4 = {
+          name: 'user one',
+          email: 'user4@email.com',
+          age: 50,
+          created: new Date()
+      };
+
+    dbRequest.onupgradeneeded = function (e) {
+        db = dbRequest.result;
+        var
+          usersStore = db.createObjectStore('users', { keyPath: 'id', autoIncrement: true });
+
+        usersStore.createIndex('name', 'name', {unique: false});
+        usersStore.createIndex('email', 'email', {unique: true});
+        usersStore.createIndex('age', 'age', {unique: false});
+    };
+
+    dbRequest.onsuccess = function () {
+        db = dbRequest.result;
+        var
+        transaction = db.transaction(['users'], 'readwrite'),
+        store = transaction.objectStore('users');
+        store.put(person1);
+        store.add(person2);
+        store.add(person3);
+        store.add(person4);
+
+    };
+
+</script>
+</body>
+</html>
