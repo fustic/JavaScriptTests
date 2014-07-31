@@ -187,13 +187,13 @@
 1. Какие выражения истинны
   ```javascript
   var
-    re = new RegExp('\\D+', 'gi'),
+    re = new RegExp('\\d+', 'gi'),
     str = 'MailRu Group 1998 - 2014';
   ```
   1. `re.global`
-  2. `re.exec(str) === ['1998']`
+  2. `re.exec(str)[0] === ['1998'][0]`
   3. `re.exec(str);
-      re.exec(str) === ['1998']`
+      re.exec(str)[0] === ['1998'][0]`
   4. `re.test(str)`
   5. `re.lastIndex === undefined`
   
@@ -205,48 +205,128 @@
     re = new RegExp('^[a-z]{5}', 'mi'),
     str = 'MailRu Group 1998 - 2014';
   ```
-  1. `re.`
-  2.
-  3.
-  4.
-  5.
+  1. `re.multiline`
+  2. `re.exec(str)[0] === ['MailR'][0]`
+  3. `re.exec(str);
+      re.exec(str)[0] === ['MailR'][0]`
+  4. `re.test(str)`
+  5. `re.lastIndex === undefined`
   
-  *Правильные ответы:* ****
+  *Правильные ответы:* **1, 2, 3, 4**
   
 3. Какие выражения истинны
   ```javascript
-  
+  var
+    re = new RegExp('(\\W*\\s|\\D\\s){2}', 'i'),
+    str = 'MailRu Group 1998 - 2014'; 
   ```
-  1.
-  2.
-  3.
-  4.
-  5.
+  1. `re.ignoreCase`
+  2. `re.test(str) === re.test()` 
+  3. `re.exec(str)[0] === [" - ", "- "][0]`
+  4. `re.test(str)
+      re.exec(str)[0] === [" - ", "- "][1]`
+  5. `re.exec(str)[0] === [" - ", "- "][1]`
   
-  *Правильные ответы:* ****
+  *Правильные ответы:* **1, 3**
   
 4. Какие выражения истинны
   ```javascript
-  
+  var
+    re = new RegExp('\\d*$', 'i'),
+    str = 'MailRu Group 1998 - 2014';
   ```
-  1.
-  2.
-  3.
-  4.
-  5.
+  1. `re.multiline`
+  2. `re.test(str) === re.test()`
+  3. `re.exec(str)[0] === ["2014"][0]`
+  4. `re.test(str)
+      re.exec(str)[0] === ["2014"][0]`
+  5. `!!re.lastIndex`
   
-  *Правильные ответы:* ****
+  *Правильные ответы:* **2, 3, 4**
   
 5. Какие выражения истинны
   ```javascript
-  
+  var 
+    re = new RegExp('.*'),
+    str = 'MailRu Group 1998 - 2014';
   ```
-  1.
-  2.
-  3.
-  4.
-  5.
+  1. `re.global`
+  2. `re.test(str)`
+  3. `re.exec(str)[0] === str`
+  4. `re.exec(str) === str`
+  5. `re.test(str);
+      re.exec(str) === str`
   
-  *Правильные ответы:* ****
+  *Правильные ответы:* **2, 3**
   
+### Тема 5. Методы класса String
+1. Какие выражения истинны
+  ```javascript
+  var
+    re = /((https?:\/\/(www\.)?|www\.)\S+$)/i,
+    str = 'MailRu Group 1998 - 2014 http://corp.mail.ru/++';
+  ```
+  1. `str.match(re)[0] === 'http://corp.mail.ru/++'`
+  2. `str.replace('+', '').match(re)[0] === 'http://corp.mail.ru/'`
+  3. `str.replace(/\+/gi, '').match(re)[0] === 'http://corp.mail.ru/'`
+  4. `str.search(re) === str.indexOf('http')`
+  5. `str.split(re)[1] === str.match(re)[0]`
   
+  *Правильные ответы:* **1, 3, 4, 5**
+
+2. Какие выражения истинны
+  ```javascript
+  var
+    re = /((https?:\/\/(www\.)?|www\.)\S+$)/i,
+    str = 'MailRu Group 1998 - 2014 https://corp.mail.ru/**';
+  ```
+  1. `str.match(re)[0] === 'https://corp.mail.ru/**'`
+  2. `str.replace('*', '').match(re)[0] === 'https://corp.mail.ru/'`
+  3. `str.replace(/\*/gi, '').match(re)[0] === 'https://corp.mail.ru/'`
+  4. `str.search(re) === str.indexOf('https')`
+  5. `str.split(re)[1] === str.match(re)[0]`
+  
+  *Правильные ответы:* **1, 3, 4, 5**
+  
+3. Какие выражения истинны
+  ```javascript
+  var
+    re = /((https?:\/\/(www\.)?|www\.)\S+$)/i,
+    str = 'MailRu Group 1998 - 2014 http://www.corp.mail.ru/--';
+  ```
+  1. `str.match(re)[0] === 'http://www.corp.mail.ru/--'`
+  2. `str.replace('-', '').match(re)[0] === 'http://www.corp.mail.ru/'`
+  3. `str.replace(/\-/gi, '').match(re)[0] === 'http://corp.mail.ru/'`
+  4. `str.search(re) === str.indexOf('http')`
+  5. `str.split(re)[1] === str.match(re)[0]`
+  
+  *Правильные ответы:* **1, 4, 5**
+  
+4. Какие выражения истинны
+  ```javascript
+  var
+    re = /((https?:\/\/(www\.)?|www\.)\S+$)/i,
+    str = 'MailRu Group 1998 - 2014 https://www.corp.mail.ru/!!';
+  ```
+  1. `str.match(re)[0] === 'https://www.corp.mail.ru/!!'`
+  2. `str.replace('!', '').match(re)[0] === 'https://www.corp.mail.ru/'`
+  3. `str.replace(/\!/gi, '').match(re)[0] === 'https://www.corp.mail.ru/'`
+  4. `str.search(re) === str.indexOf('http')`
+  5. `str.split(re)[1] === str.match(re)[0]`
+  
+  *Правильные ответы:* **1, 3, 4, 5**
+  
+5. Какие выражения истинны
+  ```javascript
+  var
+    re = /(((https?|ftp):\/\/(www\.)?|www\.)\S+$)/i,
+    str = 'MailRu Group 1998 - 2014 ftp://corp.mail.ru/++';
+  ```
+  1. `str.match(re)[0] === 'ftp://corp.mail.ru/++'`
+  2. `str.replace('+', '').match(re)[0] === 'ftp://corp.mail.ru/'`
+  3. `str.replace(/\+/gi, '').match(re)[0] === 'ftp://corp.mail.ru/'`
+  4. `str.search(re) === str.indexOf('ftp')`
+  5. `str.split(re)[1] === str.match(re)[0]`
+    
+  *Правильные ответы:* **1, 3, 4, 5**
+          
