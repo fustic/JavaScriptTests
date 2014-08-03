@@ -155,5 +155,84 @@
   4. Метод `worker.postMessage()` принимает `string` и `json`
   5. Объект `Worker` имеет доступ к `document`
   
-  *Правильные ответы:* **1, 3, 4**      
+  *Правильные ответы:* **1, 3, 4**
+        
+### Тема 3. BlobBuilder
+1. Какие из утверждений верны относительно следующего кода
+  ```javascript
+  var
+    blob = new Blob(['mail', 'ru'], {type: 'plain/text'}),
+    anotherBlob = blob.slice(1, 5, 'mailRu');
+    
+  ```
+  1. `blob.size === 6`
+  2. `blob.size === 2`
+  3. `anotherBlob.type === blob.type`
+  4. `anotherBlob.size === 4`
+  5. `anotherBlob.size = 6; blob.size = 6; anotherBlob.size === blob.size;`
+        
+  *Правильные ответы:* **1, 4**        
+  
+2. Какие из утверждений верны относительно следующего кода
+  ```javascript
+  var
+    blob = new Blob(['mail', 'ru'], {type: 'plain/text'}),
+    anotherBlob = blob.slice('mailRu');
+    
+  ```
+  1. `blob.size === 6`
+  2. `blob.size === 2`
+  3. `anotherBlob.type === blob.type`
+  4. `anotherBlob.size === 4`
+  5. `anotherBlob.size = 6; blob.size = 6; anotherBlob.size === blob.size;`
+        
+  *Правильные ответы:* **1, 5**        
+  
+3. Какие из утверждений верны относительно следующего кода
+  ```javascript
+  var
+    blob = new Blob(['<a href="http://mail.ru">MailRu</a>'], {type: 'text/html'}),
+    anotherBlob = blob.slice();
+    
+  ```
+  1. `blob.size === 35`
+  2. `blob.size === 70`
+  3. `anotherBlob.type === blob.type`
+  4. `anotherBlob.size === 70`
+  5. `anotherBlob.size = 6; blob.size = 6; anotherBlob.size === blob.size;`
+        
+  *Правильные ответы:* **1, 5**        
+  
+4. Какие из утверждений верны относительно следующего кода
+  ```javascript
+  var
+    blob = new Blob(['<a href="http://mail.ru">MailRu</a>'], {type: 'text/html'}),
+    anotherBlob = blob.slice(0, blob.size, 'mailRu');
+    
+  ```
+  1. `blob.size === 35`
+  2. `blob.size === 70`
+  3. `anotherBlob.type === blob.type`
+  4. `anotherBlob.size === 35`
+  5. `anotherBlob.size = 6; blob.size = 6; anotherBlob.size === blob.size;`
+        
+  *Правильные ответы:* **1, 4, 5**        
+  
+5. Какие из утверждений верны относительно следующего кода
+  ```javascript
+  var
+    blob = new Blob(['<a href="http://mail.ru">MailRu</a>'], {type: 'text/html'}),
+    anotherBlob = blob.slice(0, blob.size, 'text/html');
+    
+  ```
+  1. `blob.size === 35`
+  2. `blob.size === 70`
+  3. `anotherBlob.type === blob.type`
+  4. `anotherBlob.size === 35`
+  5. `anotherBlob.size = 6; blob.size = 6; anotherBlob.size === blob.size;`
+        
+  *Правильные ответы:* **1, 3, 4, 5**
+          
+          
+  
         
