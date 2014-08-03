@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+
+<canvas id="myCanvas" width="500" height="500"></canvas>
+
+<script>
+  var
+    canvas = document.getElementById('myCanvas'),
+    ctx = canvas.getContext('2d'),
+    img = new Image();
+
+  img.onload = function () {
+//    ctx.drawImage(img, 0, 0, 250, 250, 0, 0, img.width, img.height);
+    ctx.drawImage(img, 0, 0, 500, 500);
+    console.log(canvas.toDataURL('image/jpeg'));
+  };
+
+//  img.src = 'http://photos-c.ak.instagram.com/hphotos-ak-xfp1/1527543_304386356377402_939017042_n.jpg';
+  img.src = 'blog-image.png';
+//Access-Control-Allow-Origin
+
+</script>
+</body>
+</html>

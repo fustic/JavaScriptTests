@@ -76,5 +76,238 @@
   *Правильные ответы:* **1, 2, 5**
   
 ### Тема 2. Canvas
+1. Какие из утвержджений верны
+  ```html
+  <canvas id="myCanvas" width="500" height="500"></canvas>
   
+  <script>
+    var
+      canvas = document.getElementById('myCanvas'),
+      ctx = canvas.getContext('2d'),
+      ctx2 = canvas.getContext('2d');
+      
+    ctx.fillRect(0, 0, 500, 500);
+  </script>
+  ```
+  1. `Canvas` - это растровый холст
+  2. `ctx === ctx2`
+  3. В результате на экране будет черный квадрат шириной 500px
+  4. В результате на экране будет пустой холст
+  5. В результате на экране будет красный квадрат шириной 500px
+
+  *Правильные ответы:* **1, 2, 3**
+
+2. Какие из утвержджений верны
+  ```html
+  <canvas id="myCanvas" width="500" height="500"></canvas>
+  
+  <script>
+    var
+      canvas = document.getElementById('myCanvas'),
+      ctx = canvas.getContext('2d'),
+      ctx2 = canvas.getContext('2d');
+      
+    ctx.fillRect(0, 0, 500, 500);
+    ctx.fillStyle = 'red';
+    ctx.fillRect(0, 0, 500, 500);  
+  </script>
+  ```
+  1. `Canvas` - это векторный холст
+  2. `ctx === ctx2`
+  3. В результате на экране будет черный квадрат шириной 500px
+  4. В результате на экране будет пустой холст
+  5. В результате на экране будет красный квадрат шириной 500px
+
+  *Правильные ответы:* **2, 5**
+
+3. Какие из утвержджений верны
+  ```html
+  <canvas id="myCanvas" width="500" height="500"></canvas>
+  
+  <script>
+    var
+      canvas = document.getElementById('myCanvas'),
+      ctx = canvas.getContext('2d'),
+      ctx2 = canvas.getContext('2d');
+      
+    ctx.fillRect(0, 0, 500, 500);
+    ctx.fillStyle = 'red';
+    ctx2.fillRect(0, 0, 500, 500);  
+  </script>
+  ```
+  1. `Canvas` - это растровый холст. Может имееть только 1 контекст рисования
+  2. `ctx === ctx2`
+  3. В результате на экране будет черный квадрат шириной 500px
+  4. В результате на экране будет пустой холст
+  5. В результате на экране будет красный квадрат шириной 500px
+
+  *Правильные ответы:* **1, 2, 5**
+
+4. Какие из утвержджений верны
+  ```html
+  <canvas id="myCanvas" width="500" height="500"></canvas>
+  
+  <script>
+    var
+      canvas = document.getElementById('myCanvas'),
+      ctx = canvas.getContext('2d'),
+      ctx2 = canvas.getContext('2d');
+      
+    ctx2.fillStyle = 'red';
+    ctx2.fillRect(0, 0, 500, 500);  
+    ctx.fillRect(0, 0, 500, 500);
+  </script>
+  ```
+  1. `Canvas` - это растровый холст. Может имееть несколько контекстов рисования
+  2. `ctx === ctx2`
+  3. В результате на экране будет черный квадрат шириной 500px
+  4. В результате на экране будет пустой холст
+  5. В результате на экране будет красный квадрат шириной 500px
+
+  *Правильные ответы:* **2, 5**
+  
+5. Какие из утвержджений верны
+  ```html
+  <canvas id="myCanvas" width="500" height="500"></canvas>
+  
+  <script>
+    var
+      canvas = document.getElementById('myCanvas'),
+      ctx = canvas.getContext('2d'),
+      ctx2 = canvas.getContext('2d');
+      
+    ctx2.fillStyle = 'red';
+    ctx2.fillRect(0, 0, 500, 500);  
+    ctx.fillRect(0, 0, 500, 500);
     
+    canvas.width = canvas.width; 
+  </script>
+  ```
+  1. `Canvas` - это растровый холст. Может имееть только 1 контекст рисования
+  2. `ctx !== ctx2`
+  3. В результате на экране будет черный квадрат шириной 500px
+  4. В результате на экране будет пустой холст
+  5. В результате на экране будет красный квадрат шириной 500px
+
+  *Правильные ответы:* **1, 4**
+  
+### Тема 3. Canvas, drawImage
+1. Что выведет в консоль browser следующий код
+  ```html
+  var
+    canvas = document.getElementById('myCanvas'),
+    ctx = canvas.getContext('2d'),
+    img = new Image(),
+    imgSrc = 'image.jpg'; //картинка с того же домена, без соответсвующе выставленного `header Access-Control-Allow-Origin` 
+  
+    img.onload = function () {
+      ctx.drawImage(img, 0, 0);
+      console.log(canvas.toDataURL());
+    };
+  
+    img.src = imgSrc;
+  ```
+  1. `base64` картинку в формате `png`, размерами 500 на 500 px, при этом `img` будет отрисована в оригинальном масштабе, с видимой частью максимум 500 на 500 px
+  2. `base64` картинку в формате `jpeg`, размерами 500 на 500 px, при этом `img` будет отрисована в оригинальном масштабе, с видимой частью максимум 500 на 500 px
+  3. `Binary data` картинки в формате `png`, размерами 500 на 500 px, при этом `img` будет отрисована в оригинальном масштабе, с видимой частью максимум 500 на 500 px
+  4. `SecurityError`
+  5. `base64` картинку в формате `png`, размерами 500 на 500 px, при этом `img` будет отрисована с измененным масштабом, с шириной и высотой в 500 px
+
+  *Правильные ответы:* **1**
+  
+2. Что выведет в консоль browser следующий код
+  ```html
+  var
+    canvas = document.getElementById('myCanvas'),
+    ctx = canvas.getContext('2d'),
+    img = new Image(),
+    imgSrc = 'image.jpg'; //картинка с того же домена, без соответсвующе выставленного `header Access-Control-Allow-Origin` 
+  
+    img.onload = function () {
+      ctx.drawImage(img, 0, 0, 500, 500);
+      console.log(canvas.toDataURL());
+    };
+  
+    img.src = imgSrc;
+  ```
+  1. `base64` картинку в формате `png`, размерами 500 на 500 px, при этом `img` будет отрисована в оригинальном масштабе, с видимой частью максимум 500 на 500 px
+  2. `base64` картинку в формате `jpeg`, размерами 500 на 500 px, при этом `img` будет отрисована в оригинальном масштабе, с видимой частью максимум 500 на 500 px
+  3. `Binary data` картинки в формате `png`, размерами 500 на 500 px, при этом `img` будет отрисована в оригинальном масштабе, с видимой частью максимум 500 на 500 px
+  4. `SecurityError`
+  5. `base64` картинку в формате `png`, размерами 500 на 500 px, при этом `img` будет отрисована с измененным масштабом, с шириной и высотой в 500 px
+
+  *Правильные ответы:* **5**
+
+3. Что выведет в консоль browser следующий код
+  ```html
+  var
+    canvas = document.getElementById('myCanvas'),
+    ctx = canvas.getContext('2d'),
+    img = new Image(),
+    imgSrc = 'image.jpg'; //картинка с того же домена, c соответсвующе выставленным `header Access-Control-Allow-Origin` 
+  
+    img.onload = function () {
+      ctx.drawImage(img, 0, 0, 500, 500);
+      console.log(canvas.toDataURL('image/jpeg'));
+    };
+  
+    img.src = imgSrc;
+  ```
+  1. `base64` картинку в формате `png`, размерами 500 на 500 px, при этом `img` будет отрисована в оригинальном масштабе, с видимой частью максимум 500 на 500 px
+  2. `base64` картинку в формате `jpeg`, размерами 500 на 500 px, при этом `img` будет отрисована в оригинальном масштабе, с видимой частью максимум 500 на 500 px
+  3. `Binary data` картинки в формате `png`, размерами 500 на 500 px, при этом `img` будет отрисована в оригинальном масштабе, с видимой частью максимум 500 на 500 px
+  4. `SecurityError`
+  5. `base64` картинку в формате `jpeg`, размерами 500 на 500 px, при этом `img` будет отрисована с измененным масштабом, с шириной и высотой в 500 px
+
+  *Правильные ответы:* **5**  
+  
+4. Что выведет в консоль browser следующий код
+  ```html
+  var
+    canvas = document.getElementById('myCanvas'),
+    ctx = canvas.getContext('2d'),
+    img = new Image(),
+    imgSrc = 'http://otherdomain.com/image.jpg'; //картинка с другого домена, без соответсвующе выставленного `header Access-Control-Allow-Origin` 
+  
+    img.onload = function () {
+      ctx.drawImage(img, 0, 0, 500, 500);
+      console.log(canvas.toDataURL('image/jpeg'));
+    };
+  
+    img.src = imgSrc;
+  ```
+  1. `base64` картинку в формате `png`, размерами 500 на 500 px, при этом `img` будет отрисована в оригинальном масштабе, с видимой частью максимум 500 на 500 px
+  2. `base64` картинку в формате `jpeg`, размерами 500 на 500 px, при этом `img` будет отрисована в оригинальном масштабе, с видимой частью максимум 500 на 500 px
+  3. `Binary data` картинки в формате `png`, размерами 500 на 500 px, при этом `img` будет отрисована в оригинальном масштабе, с видимой частью максимум 500 на 500 px
+  4. `SecurityError`
+  5. `base64` картинку в формате `jpeg`, размерами 500 на 500 px, при этом `img` будет отрисована с измененным масштабом, с шириной и высотой в 500 px
+
+  *Правильные ответы:* **4**
+      
+5. Что выведет в консоль browser следующий код
+  ```html
+  var
+    canvas = document.getElementById('myCanvas'),
+    ctx = canvas.getContext('2d'),
+    img = new Image(),
+    imgSrc = 'http://otherdomain.com/image.jpg'; //картинка с другого домена, без соответсвующе выставленного `header Access-Control-Allow-Origin` 
+  
+    img.onload = function () {
+      ctx.drawImage(img, 0, 0);
+      console.log(canvas.toDataURL());
+    };
+  
+    img.src = imgSrc;
+  ```
+  1. `base64` картинку в формате `png`, размерами 500 на 500 px, при этом `img` будет отрисована в оригинальном масштабе, с видимой частью максимум 500 на 500 px
+  2. `base64` картинку в формате `jpeg`, размерами 500 на 500 px, при этом `img` будет отрисована в оригинальном масштабе, с видимой частью максимум 500 на 500 px
+  3. `Binary data` картинки в формате `png`, размерами 500 на 500 px, при этом `img` будет отрисована в оригинальном масштабе, с видимой частью максимум 500 на 500 px
+  4. `SecurityError`
+  5. `base64` картинку в формате `jpeg`, размерами 500 на 500 px, при этом `img` будет отрисована с измененным масштабом, с шириной и высотой в 500 px
+
+  *Правильные ответы:* **4**
+      
+      
+  
+### Тема 4. Canvas, scale, transform
+
