@@ -3,7 +3,7 @@
 1. Отметьте верные утверждения
   ```javascript
   var date = new Date( new Date().getTime() + 60 * 1000 );
-  document.cookie="myCookie=myValue; path=/; expires="+date.toUTCString();"
+  document.cookie="myCookie=myValue; path=/; expires="+date.toUTCString();
   ```
   1. `document.cookie` будут перезаписаны новым значением
   2. будет добавлена новая `cookie` с ключом `myCookie` и значением `myValue`
@@ -40,7 +40,7 @@
 4. Отметьте верные утверждения
   ```javascript
   var date = new Date( new Date().getTime() + 60 * 1000 );
-  document.cookie="myCookie=myValue; path=/cookie; expires="+date.toUTCString();"
+  document.cookie="myCookie=myValue; path=/cookie; expires=" + date.toUTCString();
   ```
   1. `document.cookie` будут перезаписаны новым значением
   2. будет добавлена новая `cookie` с ключом `myCookie` и значением `myValue` со сроком действия 60 сек
@@ -53,7 +53,7 @@
 5. Отметьте верные утверждения
   ```javascript
   var date = new Date( new Date().getTime() + 60 * 1000 );
-  document.cookie="myCookie=myValue; path=/cookie; expires="+date.toUTCString(); secure=true;"
+  document.cookie="myCookie=myValue; path=/cookie; expires=" + date.toUTCString() + "; secure=true;"
   ```
   1. все `cookie` доступны из `JavaScript`
   2. будет добавлена новая `cookie` с ключом `myCookie` и значением `myValue` со сроком действия 60 сек
