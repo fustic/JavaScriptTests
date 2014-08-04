@@ -309,13 +309,17 @@
   alert(mailFunction());
   ```
   1. 0
+  
      0
   2. 0
+  
      1
   3. 1
+  
      2
   4. undefined is not a function
   5. 1
+  
      1
   
   *Правильные ответы:* **3**
@@ -333,10 +337,13 @@
   alert(mailFunction());
   ```
   1. 1
+  
      6
   2. 0
+  
      1
   3. 1
+  
      2
   4. undefined is not a function
   5. ReferenceError
@@ -357,10 +364,13 @@
   alert(mainAnotherFunction());
   ```
   1. 1
+  
      1
   2. 0
+  
      0
   3. 1
+  
      2
   4. undefined is not a function
   5. ReferenceError
@@ -382,10 +392,13 @@
   alert(mainAnotherFunction());
   ```
   1. 1
+  
      1
   2. 1
+  
      5
   3. 1
+  
      2
   4. undefined is not a function
   5. ReferenceError
@@ -407,10 +420,13 @@
   alert(+mainAnotherFunction());
   ```
   1. 1
+  
      1
   2. 1
+  
      5
   3. 1
+  
      2
   4. undefined is not a function
   5. ReferenceError
@@ -651,6 +667,7 @@
   3. group undefined
   4. TypeError: undefined is not a function
   5. mailRu group
+  
      TypeError: undefined is not a function
   
   *Правильные ответы:* **2**
@@ -672,6 +689,7 @@
   3. group undefined
   4.  group
   5. mailRu group
+  
      TypeError: undefined is not a function
   
   *Правильные ответы:* **1**
@@ -693,6 +711,7 @@
   3. group undefined
   4. group
   5. group
+  
      TypeError: undefined is not a function
   
   *Правильные ответы:* **1**  
@@ -714,6 +733,7 @@
   3. group undefined
   4.  group
   5. mailRu group
+  
      TypeError: undefined is not a function
   
   *Правильные ответы:* **2**
@@ -735,6 +755,7 @@
   3. group undefined
   4.  group
   5. mailRu group
+  
      TypeError: undefined is not a function
   
   *Правильные ответы:* **2**  
