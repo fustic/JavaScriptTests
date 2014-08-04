@@ -332,14 +332,11 @@
   mailFunction.mailUsers = 5;
   alert(mailFunction());
   ```
-  1. 1
-  
+  1. 1  
      6
-  2. 0
-  
+  2. 0  
      1
-  3. 1
-  
+  3. 1  
      2
   4. undefined is not a function
   5. ReferenceError
@@ -359,14 +356,11 @@
   alert(mailFunction());
   alert(mainAnotherFunction());
   ```
-  1. 1
-  
+  1. 1  
      1
-  2. 0
-  
+  2. 0  
      0
-  3. 1
-  
+  3. 1  
      2
   4. undefined is not a function
   5. ReferenceError
@@ -387,14 +381,11 @@
   mailFunction.mailUsers = 4;
   alert(mainAnotherFunction());
   ```
-  1. 1
-  
+  1. 1  
      1
-  2. 1
-  
+  2. 1  
      5
-  3. 1
-  
+  3. 1  
      2
   4. undefined is not a function
   5. ReferenceError
@@ -415,14 +406,11 @@
   mailFunction.mailUsers = 4;
   alert(+mainAnotherFunction());
   ```
-  1. 1
-  
+  1. 1  
      1
-  2. 1
-  
+  2. 1  
      5
-  3. 1
-  
+  3. 1  
      2
   4. undefined is not a function
   5. ReferenceError
