@@ -605,21 +605,21 @@
     delete mailRu.toString;
     alert(mailRu);
   ```
-  1. [object Object]
+  1. [object Object]  
+     [object Object]  
      [object Object]
-     [object Object]
-  2. [object Function]
+  2. [object Function]  
+     [object Function]  
      [object Function]
-     [object Function]
-  3. MailRu2014
-     MailRu2014 in Russia
-     MailRu2014 in Russia
-  4. MailRu2014
-     MailRu2014 in Russia
+  3. MailRu2014  
+     MailRu2014 in Russia  
+     MailRu2014 in Russia  
+  4. MailRu2014  
+     MailRu2014 in Russia  
      undefined is not a function
-  5. MailRu2014
-     MailRu2014 in Russia
-     [object Object]           
+  5. MailRu2014  
+     MailRu2014 in Russia  
+     [object Object]
 
   *Правильные ответы:* **3**
   
@@ -657,20 +657,20 @@
    alert(mailRu);                     
   ```                 
      
-  1. [object Object]
+  1. [object Object]  
+     [object Object]  
      [object Object]
-     [object Object]
-  2. [object Function]
+  2. [object Function]  
+     [object Function]  
      [object Function]
-     [object Function]
-  3. MailRu2014
+  3. MailRu2014  
+     MailRu2014 in Russia  
      MailRu2014 in Russia
-     MailRu2014 in Russia
-  4. MailRu2014
-     MailRu2014 in Russia
+  4. MailRu2014  
+     MailRu2014 in Russia  
      undefined is not a function
-  5. MailRu2014
-     MailRu2014 in Russia
+  5. MailRu2014  
+     MailRu2014 in Russia  
      [object Object]
   
   *Правильные ответы:* **3**          
@@ -705,20 +705,20 @@
    alert(mailRu);                     
   ```                 
      
-  1. [object Object]
+  1. [object Object]  
+     [object Object]  
      [object Object]
-     [object Object]
-  2. [object Function]
+  2. [object Function]  
+     [object Function]  
      [object Function]
-     [object Function]
-  3. MailRu2014
+  3. MailRu2014  
+     MailRu2014 in Russia  
      MailRu2014 in Russia
-     MailRu2014 in Russia
-  4. MailRu2014
-     MailRu2014 in Russia
+  4. MailRu2014  
+     MailRu2014 in Russia  
      undefined is not a function
-  5. MailRu2014
-     MailRu2014 in Russia
+  5. MailRu2014  
+     MailRu2014 in Russia  
      [object Object]
   
   *Правильные ответы:* **3**          
@@ -753,20 +753,20 @@
    alert(mailRu);                     
   ```                 
      
-  1. [object Object]
+  1. [object Object]  
+     [object Object]  
      [object Object]
-     [object Object]
-  2. MailRuGroup
+  2. MailRuGroup  
+     MailRuGroup2014 in Russia  
      MailRuGroup2014 in Russia
-     MailRuGroup2014 in Russia
-  3. MailRu2014
+  3. MailRu2014  
+     MailRu2014 in Russia  
      MailRu2014 in Russia
-     MailRu2014 in Russia
-  4. MailRu2014
-     MailRu2014 in Russia
+  4. MailRu2014  
+     MailRu2014 in Russia  
      undefined is not a function
-  5. MailRu2014
-     MailRu2014 in Russia
+  5. MailRu2014  
+     MailRu2014 in Russia  
      [object Object]
   
   *Правильные ответы:* **3**          
@@ -805,20 +805,20 @@
    alert(mailRu);                     
   ```                 
      
-  1. [object Object]
+  1. [object Object]  
+     [object Object]  
      [object Object]
-     [object Object]
-  3. MailRuGroup
+  3. MailRuGroup  
+     MailRuGroup2014 in Russia  
      MailRuGroup2014 in Russia
-     MailRuGroup2014 in Russia
-  3. MailRu2014
+  3. MailRu2014  
+     MailRu2014 in Russia  
      MailRu2014 in Russia
-     MailRu2014 in Russia
-  4. MailRu2014
-     MailRu2014 in Russia
+  4. MailRu2014  
+     MailRu2014 in Russia  
      undefined is not a function
-  5. MailRu2014
-     MailRu2014 in Russia
+  5. MailRu2014  
+     MailRu2014 in Russia  
      MailRuGroup2014 in Russia
   
   *Правильные ответы:* **3**          
