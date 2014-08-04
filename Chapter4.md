@@ -309,17 +309,13 @@
   alert(mailFunction());
   ```
   1. 0
-  
      0
   2. 0
-  
      1
   3. 1
-  
      2
   4. undefined is not a function
   5. 1
-  
      1
   
   *Правильные ответы:* **3**
