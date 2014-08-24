@@ -7,23 +7,31 @@
 <body>
 <a href="" id="click">click</a>
 <script>
-//    document.getElementById('click').addEventListener('click', function (e) {
-////        setTimeout(function () {
-////        window.open("https://mail.ru", "mail.ru");
-////
-////        }, 1500);
+//  window.open("http://mail.ru", "mail.ru");
+
+
+//setTimeout(function() {
+//  window.open("http://mail.ru", "mail.ru");
+//}, 300);
+
+
+    document.getElementById('click').addEventListener('click', function (e) {
+        setTimeout(function () {
+          window.open("https://mail.ru", "mail.ru");
+
+        }, 1500);
 //        window.open("https://mail.ru", "mail.ru");
-//        e.preventDefault();
-//    });
+        e.preventDefault();
+    });
 //    setTimeout(function () {
 //        window.open("https://mail.ru", "mail.ru");
 //
 //    }, 500)
 
-window.onload = function () {
-    document.write('<h1>Mail.ru</h1>');
-    document.write('<h2>The best friend ever</h2>');
-};
+//window.onload = function () {
+//    document.write('<h1>Mail.ru</h1>');
+//    document.write('<h2>The best friend ever</h2>');
+//};
 </script>
 </body>
 </html>

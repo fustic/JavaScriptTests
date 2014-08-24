@@ -176,9 +176,9 @@
   ```
   1. div
   2. body
-  3. div
+  3. div  
      body
-  4. body
+  4. body  
      div
   5. пустая строка
    
@@ -208,9 +208,9 @@
   ```
   1. div
   2. body
-  3. div
+  3. div  
      body
-  4. body
+  4. body  
      div
   5. пустая строка
    
@@ -240,9 +240,9 @@
   ```
   1. div
   2. body
-  3. div
+  3. div  
      body
-  4. body
+  4. body  
      div
   5. пустая строка
    
@@ -272,9 +272,9 @@
   ```
   1. div
   2. body
-  3. div
+  3. div  
      body
-  4. body
+  4. body  
      div
   5. пустая строка
    
@@ -291,13 +291,13 @@
             body = document.body,
             div = document.querySelector('div');
   
-            body.addEventListener('click', function(e) {
-                e.stopPropagation();
+            body.addEventListener('click', function(event) {
+                event.stopPropagation();
                 console.log('body')
             }, false);
     
-            div.addEventListener('click', function(e) {
-                e.stopPropagation();
+            div.addEventListener('click', function(event) {
+                event.stopPropagation();
                 console.log('div')
             }, false);
   
@@ -306,9 +306,9 @@
   ```
   1. div
   2. body
-  3. div
+  3. div  
      body
-  4. body
+  4. body  
      div
   5. пустая строка
    
@@ -366,19 +366,19 @@
 1. Какие события будут зафиксированы в консоли browser при клике левой кнопкой мыши
   
   ```javascript
-  document.addEventListener('click', function (e) {
-      e.stopPropagation();
-      e.preventDefault();
+  document.addEventListener('click', function (event) {
+      event.stopPropagation();
+      event.preventDefault();
       console.log('click');
   }, false);
-  document.addEventListener('mouseup', function (e) {
-      e.stopPropagation();
-      e.preventDefault();
+  document.addEventListener('mouseup', function (event) {
+      event.stopPropagation();
+      event.preventDefault();
       console.log('mouseup');
   }, false);
-  document.addEventListener('mousedown', function (e) {
-      e.stopPropagation();
-      e.preventDefault();
+  document.addEventListener('mousedown', function (event) {
+      event.stopPropagation();
+      event.preventDefault();
       console.log('mousedown');
   }, false);
   ```
@@ -394,19 +394,19 @@
 2. Какие события будут зафиксированы в консоли browser при клике правой кнопкой мыши
   
   ```javascript
-  document.addEventListener('contextmenu', function (e) {
-      e.stopPropagation();
-      e.preventDefault();
+  document.addEventListener('contextmenu', function (event) {
+      event.stopPropagation();
+      event.preventDefault();
       console.log('contextmenu');
   }, false);
-  document.addEventListener('mouseup', function (e) {
-      e.stopPropagation();
-      e.preventDefault();
+  document.addEventListener('mouseup', function (event) {
+      event.stopPropagation();
+      event.preventDefault();
       console.log('mouseup');
   }, false);
-  document.addEventListener('mousedown', function (e) {
-      e.stopPropagation();
-      e.preventDefault();
+  document.addEventListener('mousedown', function (event) {
+      event.stopPropagation();
+      event.preventDefault();
       console.log('mousedown');
   }, false);
   ```
@@ -422,19 +422,19 @@
 3. Какие события будут зафиксированы в консоли browser при клике левой кнопкой мыши
   
   ```javascript
-  document.addEventListener('contextmenu', function (e) {
-      e.stopPropagation();
-      e.preventDefault();
+  document.addEventListener('contextmenu', function (event) {
+      event.stopPropagation();
+      event.preventDefault();
       console.log('contextmenu');
   }, false);
-  document.addEventListener('mouseup', function (e) {
-      e.stopPropagation();
-      e.preventDefault();
+  document.addEventListener('mouseup', function (event) {
+      event.stopPropagation();
+      event.preventDefault();
       console.log('mouseup');
   }, false);
-  document.addEventListener('mousedown', function (e) {
-      e.stopPropagation();
-      e.preventDefault();
+  document.addEventListener('mousedown', function (event) {
+      event.stopPropagation();
+      event.preventDefault();
       console.log('mousedown');
   }, false);
   ```
@@ -450,19 +450,19 @@
 4. Какие события будут зафиксированы в консоли browser при клике левой кнопкой мыши
   
   ```javascript
-  document.addEventListener('mouseup', function (e) {
-      e.stopPropagation();
-      e.preventDefault();
+  document.addEventListener('mouseup', function (event) {
+      event.stopPropagation();
+      event.preventDefault();
       console.log('mouseup');
   }, false);
-  document.addEventListener('mouseup', function (e) {
-      e.stopPropagation();
-      e.preventDefault();
+  document.addEventListener('mouseup', function (event) {
+      event.stopPropagation();
+      event.preventDefault();
       console.log('mouseup');
   }, false);
-  document.addEventListener('mousedown', function (e) {
-      e.stopPropagation();
-      e.preventDefault();
+  document.addEventListener('mousedown', function (event) {
+      event.stopPropagation();
+      event.preventDefault();
       console.log('mousedown');
   }, false);
   ```
@@ -478,19 +478,19 @@
 5. Какие события будут зафиксированы в консоли browser при клике левой кнопкой мыши
   
   ```javascript
-  document.addEventListener('click', function (e) {
-      e.stopPropagation();
-      e.preventDefault();
+  document.addEventListener('click', function (event) {
+      event.stopPropagation();
+      event.preventDefault();
       console.log('click');
   }, false);
-  document.addEventListener('mouseup', function (e) {
-      e.stopPropagation();
-      e.preventDefault();
+  document.addEventListener('mouseup', function (event) {
+      event.stopPropagation();
+      event.preventDefault();
       console.log('mouseup');
   }, false);
-  document.addEventListener('dbclick', function (e) {
-      e.stopPropagation();
-      e.preventDefault();
+  document.addEventListener('dbclick', function (event) {
+      event.stopPropagation();
+      event.preventDefault();
       console.log('dbclick');
   }, false);
   ```

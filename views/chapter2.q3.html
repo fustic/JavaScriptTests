@@ -43,20 +43,20 @@
 //        e.preventDefault();
 //        console.log('mouseover');
 //    }, false);
-document.addEventListener('click', function (e) {
-    e.stopPropagation();
-    e.preventDefault();
-    console.log('click');
+document.addEventListener('click', function (event) {
+  event.stopPropagation();
+  event.preventDefault();
+  console.log('click');
 }, false);
-document.addEventListener('mouseup', function (e) {
-    e.stopPropagation();
-    e.preventDefault();
-    console.log('mouseup');
+document.addEventListener('mouseup', function (event) {
+  event.stopPropagation();
+  event.preventDefault();
+  console.log('mouseup');
 }, false);
-document.addEventListener('dbclick', function (e) {
-    e.stopPropagation();
-    e.preventDefault();
-    console.log('dbclick');
+document.addEventListener('dbclick', function (event) {
+  event.stopPropagation();
+  event.preventDefault();
+  console.log('dbclick');
 }, false);
 </script>
 </body>
